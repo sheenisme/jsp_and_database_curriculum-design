@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="container">
-		<p class="title">基于浏览器的身份验证登录系统</p>
+		<p class="title">唯 e 客户服务系统</p>
 		<div class="box">
 				<div id="transform_box">
 						<h2>恭喜您注册成功！！！</h2>

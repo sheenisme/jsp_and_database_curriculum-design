@@ -9,7 +9,7 @@
 <body>
 <% session.invalidate(); %>
 	<div class="container">
-		<p class="title">基于浏览器的身份验证登录系统</p>
+		<p class="title">唯 e 客户服务系统</p>
 		<div class="box">
 				<div id="register_box">
 						<h2>退出页面</h2>
@@ -19,7 +19,7 @@
 						</form>
 				</div>
 				<br>
-				<div><pre>基于浏览器的身份验证登录系统 - 退出页面！</pre></div> 
+				<div><pre>唯 e 客户服务系统 - 退出页面！</pre></div> 
 		</div>
 	</div>
 	<br><br>

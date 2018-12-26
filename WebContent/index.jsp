@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>唯 e 客户服务系统</title>
 </head>
 <body>
 	<p>欢迎你好！</p>

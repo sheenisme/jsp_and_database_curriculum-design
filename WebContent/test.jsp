@@ -8,13 +8,13 @@
 </head>
 <body>
 	<div class="container">
-		<p class="title">基于浏览器的身份验证登录系统</p>
+		<p class="title">唯 e 客户服务系统</p>
 		<div class="box">
 				<div id="register_box">
 						<h2>test页面</h2>
 				</div>
 				<br>
-				<div><pre>基于浏览器的身份验证登录系统 - test页面！</pre></div> 
+				<div><pre>唯 e 客户服务系统- test页面！</pre></div> 
 		</div>
 	</div>
 	<br><br>

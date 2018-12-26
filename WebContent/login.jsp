@@ -3,14 +3,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>基于浏览器的身份验证登录系统</title>
+	<title>唯 e 客户服务系统</title>
 	<link rel="stylesheet" href="./css/form.css" />
 	<script type="text/javascript" src="js/login.js">
 	</script>
 </head>
 <body>
 	<div class="container">
-		<p class="title">基于浏览器的身份验证登录系统</p>
+		<p class="title">唯 e 客户服务系统</p>
 		<div class="box">
 				<div id="login_box">
 						<h2>登录页面</h2>
@@ -31,7 +31,7 @@
 						</form>	
 				</div>
 				<br>
-				<div><pre>基于浏览器的身份验证登录系统-登录页面!!     <a href="foundmm.jsp">找回密码</a></pre></div> 
+				<div><pre>唯 e 客户服务系统-登录页面!    <a href="foundmm.jsp">找回密码</a></pre></div> 
 		</div>
 	</div>
 	<br><br>

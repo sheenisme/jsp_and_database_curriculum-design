@@ -10,7 +10,7 @@
 </head>
 <body>
 <div>
-	<p class="title">基于浏览器的身份验证登录系统</p>
+	<p class="title">唯 e 客户服务系统</p>
 	<form action="UpdateUser" method="post" name="updateform" onsubmit="return confirm('确定要修改吗？')">
 	<%@ include file="showinfopage.jsp" %>
 		<table align="center" border="5px">
