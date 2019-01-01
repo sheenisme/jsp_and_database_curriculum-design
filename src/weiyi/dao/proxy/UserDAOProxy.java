@@ -1,9 +1,9 @@
 package weiyi.dao.proxy; 
 
 import weiyi.MD5.EncryptImp;
-import weiyi.dao.*;  
+import weiyi.dao.*;
+import weiyi.dao.databaseconnection.DatabaseConnection;
 import weiyi.dao.vo.*;   
-import weiyi.dao.dbc.*;
 import weiyi.dao.impl.UserDAOImpl;
 
 import java.util.*; 

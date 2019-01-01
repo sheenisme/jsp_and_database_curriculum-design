@@ -60,6 +60,7 @@ public class loginUserService extends HttpServlet{
 				}
 				else{
 					//System.out.println("登陆成功！");
+					
 					req.getRequestDispatcher("/user_page.jsp").forward(req, resp);
 				}
 			}
