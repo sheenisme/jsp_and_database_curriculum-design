@@ -25,7 +25,7 @@ public class AdminDAOImpl implements IAdminDAO {
 	public int doCreate(Admin vo) throws Exception {
 		String sql = "insert into admin values(?,?,?,?,?,?,?,?,?) ";  
         stat = con.prepareStatement(sql);   
-        //这里是自增的，不用写该语句stat.setInt(1, vo.getID());  
+        //这里是自增的，不用写该语句stat.setInt(1, vo.getId());  
         stat.setString(1, vo.getLoginName());  
         stat.setString(2, vo.getPassword());  
         stat.setString(3, vo.getName());
@@ -55,7 +55,7 @@ public class AdminDAOImpl implements IAdminDAO {
         while(rs.next()){
             //获取属性并将属性写至vo对象中
             vo=new Admin();  
-            vo.setID(rs.getInt(1));
+            vo.setId(rs.getInt(1));
             vo.setLoginName(rs.getString(2));
             vo.setPassword(rs.getString(3));
             vo.setName(rs.getString(4));
@@ -79,7 +79,7 @@ public class AdminDAOImpl implements IAdminDAO {
 	     Admin vo=null;
 	     if(rs.next()){   
 	       	vo=new Admin();  
-	        vo.setID(id);
+	        vo.setId(id);
 	        vo.setLoginName(rs.getString(1));
 	        vo.setPassword(rs.getString(2));
 	        vo.setName(rs.getString(3));
@@ -120,7 +120,7 @@ public class AdminDAOImpl implements IAdminDAO {
         stat.setDate(7, vo.getDate());
         stat.setString(8, vo.getGrade());
         stat.setString(9, vo.getRemark());
-        stat.setInt(10, vo.getID());
+        stat.setInt(10, vo.getId());
         int update=stat.executeUpdate();
         if(update>0) {
         	return update;
@@ -131,18 +131,35 @@ public class AdminDAOImpl implements IAdminDAO {
 	}
 
 	@Override
-	public Admin findByName(String name) throws Exception {
-		String sql = "select id from admin where loginname= ? ";  
+	public List<Admin> findByName(String name) throws Exception {
+		List<Admin> list = new ArrayList<Admin>();
+		String sql = "select id from admin where loginname=? ";  
         stat = con.prepareStatement(sql);  
         stat.setString(1,name);  
         ResultSet rs = stat.executeQuery(); 
         Admin vo=null;
-        if(rs.next()){ 
+        if(rs.next()){      	
         	vo=new Admin();
-        	
-        	return vo;
+        	vo=this.findById(rs.getInt(1));
+           	list.add(vo);
         }  
-        return vo;
+        return list;
+	}
+
+	@Override
+	public List<Admin> findByEmail(String email) throws Exception {
+		List<Admin> list = new ArrayList<Admin>();
+		String sql = "select id from admin where email=? ";  
+        stat = con.prepareStatement(sql);  
+        stat.setString(1,email);  
+        ResultSet rs = stat.executeQuery(); 
+        Admin vo=null;
+        if(rs.next()){      	
+        	vo=new Admin();
+        	vo=this.findById(rs.getInt(1));
+           	list.add(vo);
+        }  
+        return list;
 	}
 
 }

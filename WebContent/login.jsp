@@ -32,11 +32,10 @@
 						</form>	
 				</div>
 				<br>
-				<div><pre>唯 e 客户服务系统-登录页面!&nbsp;&nbsp;&nbsp;<a href="foundmm.jsp">找回密码</a>
-				</pre></div> 
+				<div><pre>唯 e 客户服务系统-登录页面!&nbsp;&nbsp;&nbsp;<a href="foundmm.jsp">找回密码</a></pre></div> 
 		</div>
 	</div>
-	<br><br>
+	<br>
 	<p class="foot">
 		© WeiyiNetClient v1.0.0
 		<br>

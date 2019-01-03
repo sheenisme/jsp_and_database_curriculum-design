@@ -13,10 +13,11 @@ public class Admin {
 	private Date date;
 	private String grade;
 	private String remark;
-	public int getID() {
+	
+	public int getId() {
 		return id;
 	}
-	public void setID(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getLoginName() {
@@ -72,6 +73,5 @@ public class Admin {
 	}
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-	
+	}	
 }

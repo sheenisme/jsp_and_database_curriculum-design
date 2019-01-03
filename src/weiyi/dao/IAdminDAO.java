@@ -1,6 +1,9 @@
 package weiyi.dao;
 
+import java.util.List;
+
 import weiyi.dao.vo.Admin;
+import weiyi.dao.vo.User;
 
 /**
  * 针对Admin对象，新增DAO操作的功能
@@ -8,11 +11,20 @@ import weiyi.dao.vo.Admin;
  *
  */
 public interface IAdminDAO extends IDAO<Admin, Integer> {
+	
 	/**
 	 * 根据登录名（loginName）查询指定管理员对象
 	 * @param name 要查询的对象的登录名
-	 * @return Admin对象
+	 * @return Admin对象列表
 	 * @throws Exception
 	 */
-	public Admin findByName(String name)throws Exception;
+	public List<Admin> findByName(String name)throws Exception;
+	
+	/**
+	 * 根据邮箱查询指定管理员对象
+	 * @param email 要查询的邮箱
+	 * @return Admin对象列表
+	 * @throws Exception
+	 */
+	public List<Admin> findByEmail(String email)throws Exception;
 }

@@ -15,10 +15,10 @@ public class Custom {
 	private String point;//accumulate Point会员积分数
 	private String unit;
 	private String remark;
-	public int getID() {
+	public int getId() {
 		return id;
 	}
-	public void setID(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getLoginName() {

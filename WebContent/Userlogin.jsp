@@ -1,17 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>唯 e 客户服务系统</title>
-	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/form.css" />
 	<script type="text/javascript" src="js/login.js">
 	</script>
 </head>
 <body>
 	<div class="container">
 		<p class="title">唯 e 客户服务系统</p>
-		<a href="">管理员登录</a>
 		<div class="box">
 				<div id="login_box">
 						<h2>登录页面</h2>
@@ -22,22 +21,23 @@
 						<div class="ui field">	
 						密码：<input id="password" type="password" name="password"><br>
 						</div>
-						<div class="ui field information">	
-						保存信息：<input id="checkbox" type="checkbox" name="checkbox" value="save">(不支持 IE浏览器)<br>
+						<div class="ui field">	
+						<input id="checkbox" type="checkbox" name="checkbox" value="save">&nbsp;&nbsp;记&nbsp;住 &nbsp;密&nbsp; 码<br>
 						</div>
 						<div class="m">
 							<input class="ui button" type="submit" value="登录">
 							<a href="register.jsp"><input class="ui button" type="button"  value="注册"></a>
+							<a href="AdminLogin.jsp" class="ui button">管理员登录</a>
 						</div>
 						</form>	
 				</div>
 				<br>
-				<div><pre>唯 e 客户服务系统-登录页面!    <a href="foundmm.jsp">找回密码</a></pre></div> 
+				<div><pre>唯 e 客户服务系统-登录页面!&nbsp;&nbsp;&nbsp;<a href="foundmm.jsp">找回密码</a></pre></div> 
 		</div>
 	</div>
-	<br><br>
+	<br>
 	<p class="foot">
-		© WeiyiNetClient v1.1.1
+		© WeiyiNetClient v1.0.0
 		<br>
 	</p>
 </body>

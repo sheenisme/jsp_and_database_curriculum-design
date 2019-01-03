@@ -21,7 +21,7 @@ public class CustomDAOImpl implements ICustomDAO{
 	public int doCreate(Custom vo) throws Exception {
 		String sql = "insert into custom values(?,?,?,?,?,?,?,?,?,?,?) ";  
         stat = con.prepareStatement(sql);   
-        //这里是自增的，不用写该语句stat.setInt(1, vo.getID());  
+        //这里是自增的，不用写该语句stat.setInt(1, vo.getId());  
         stat.setString(1, vo.getLoginName());  
         stat.setString(2, vo.getPassword());  
         stat.setString(3, vo.getName());
@@ -53,7 +53,7 @@ public class CustomDAOImpl implements ICustomDAO{
         while(rs.next()){
             //获取属性并将属性写至vo对象中
             vo=new Custom();  
-            vo.setID(rs.getInt(1));
+            vo.setId(rs.getInt(1));
             vo.setLoginName(rs.getString(2));
             vo.setPassword(rs.getString(3));
             vo.setName(rs.getString(4));
@@ -79,7 +79,7 @@ public class CustomDAOImpl implements ICustomDAO{
 	     Custom vo=null;
 	     if(rs.next()){   
 	       	vo=new Custom();  
-	        vo.setID(id);
+	        vo.setId(id);
 	        vo.setLoginName(rs.getString(1));
             vo.setPassword(rs.getString(2));
             vo.setName(rs.getString(3));
@@ -134,9 +134,35 @@ public class CustomDAOImpl implements ICustomDAO{
 	}
 
 	@Override
-	public Custom findByName(String name) throws Exception {
-		
-		return null;
+	public List<Custom> findByName(String name) throws Exception {
+		List<Custom> list = new ArrayList<Custom>();
+		String sql = "select id from custom where loginname=? ";  
+        stat = con.prepareStatement(sql);  
+        stat.setString(1,name);  
+        ResultSet rs = stat.executeQuery(); 
+        Custom vo=null;
+        if(rs.next()){      	
+        	vo=new Custom();
+        	vo=this.findById(rs.getInt(1));
+           	list.add(vo);
+        }  
+        return list;
 	}
 
+	@Override
+	public List<Custom> findByEmail(String email) throws Exception {
+		List<Custom> list = new ArrayList<Custom>();
+		String sql = "select id from custom where email=? ";  
+        stat = con.prepareStatement(sql);  
+        stat.setString(1,email);  
+        ResultSet rs = stat.executeQuery(); 
+        Custom vo=null;
+        if(rs.next()){      	
+        	vo=new Custom();
+        	vo=this.findById(rs.getInt(1));
+           	list.add(vo);
+        }  
+        return list;
+	}
+	
 }

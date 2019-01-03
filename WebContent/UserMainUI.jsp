@@ -47,17 +47,13 @@ body{
 		}
 
 #footer{
+		position: center;
 		width: 1100px;
 		height: 50px;
 		padding: 50px;
 		clear: left;
 		float:center;
 	}
-p{
-  	width:100%;
-  	text-align:center;
-  
-}
 </style>
 </head>
 <body>
@@ -107,7 +103,7 @@ p{
 
 
 <div id="footer" align="center" class="container">
-	<p id="foot" align="center"> 
+	<p id="foot" class="foot" align="center"> 
 	© WeiyiNetClient v1.0.0
 	<br>
 	</p>
