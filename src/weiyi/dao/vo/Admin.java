@@ -1,6 +1,6 @@
 package weiyi.dao.vo;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Admin {
 	private int id;

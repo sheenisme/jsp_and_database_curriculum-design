@@ -17,7 +17,7 @@ public class DatabaseConnection{
      * 
 	 */
 	private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";  
-    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=jsp"; 
+    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=weiyi"; 
     private static final String USER = "sa";  
     private static final String PASS = "123456";  
     public DatabaseConnection()throws Exception{

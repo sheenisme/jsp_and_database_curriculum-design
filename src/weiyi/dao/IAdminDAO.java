@@ -8,5 +8,11 @@ import weiyi.dao.vo.Admin;
  *
  */
 public interface IAdminDAO extends IDAO<Admin, Integer> {
-	
+	/**
+	 * 根据登录名（loginName）查询指定管理员对象
+	 * @param name 要查询的对象的登录名
+	 * @return Admin对象
+	 * @throws Exception
+	 */
+	public Admin findByName(String name)throws Exception;
 }

@@ -21,17 +21,19 @@
 						<div class="ui field">	
 						密码：<input id="password" type="password" name="password"><br>
 						</div>
-						<div class="ui field information">	
-						保存信息：<input id="checkbox" type="checkbox" name="checkbox" value="save">(不支持 IE浏览器)<br>
+						<div class="ui field">	
+						<input id="checkbox" type="checkbox" name="checkbox" value="save">&nbsp;&nbsp;记&nbsp;住 &nbsp;密&nbsp; 码<br>
 						</div>
 						<div class="m">
 							<input class="ui button" type="submit" value="登录">
 							<a href="register.jsp"><input class="ui button" type="button"  value="注册"></a>
+							<a href="AdminLogin.jsp" class="ui button">管理员登录</a>
 						</div>
 						</form>	
 				</div>
 				<br>
-				<div><pre>唯 e 客户服务系统-登录页面!    <a href="foundmm.jsp">找回密码</a></pre></div> 
+				<div><pre>唯 e 客户服务系统-登录页面!&nbsp;&nbsp;&nbsp;<a href="foundmm.jsp">找回密码</a>
+				</pre></div> 
 		</div>
 	</div>
 	<br><br>
