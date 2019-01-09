@@ -2,9 +2,11 @@ package weiyi.dao.factory;
 
 import weiyi.dao.IAdminDAO;
 import weiyi.dao.ICustomDAO;
+import weiyi.dao.IRepairOrdersDAO;
 import weiyi.dao.IUserDAO;
 import weiyi.dao.proxy.AdminDAOProxy;
 import weiyi.dao.proxy.CustomDAOProxy;
+import weiyi.dao.proxy.RepairOrdersDAOProxy;
 import weiyi.dao.proxy.UserDAOProxy;  
 
 public class DAOFactory{  
@@ -36,6 +38,16 @@ public class DAOFactory{
             dao = new CustomDAOProxy();      
         }  
         catch(Exception e){  
+            e.printStackTrace();  
+        }  
+        return dao; 
+    }
+    
+    public static IRepairOrdersDAO getRepairOrders() {
+    	IRepairOrdersDAO dao=null;
+    	try {
+    		dao=new RepairOrdersDAOProxy();
+    	}catch(Exception e){  
             e.printStackTrace();  
         }  
         return dao; 

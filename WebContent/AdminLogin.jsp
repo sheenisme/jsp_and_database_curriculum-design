@@ -21,8 +21,8 @@
 						<div class="ui field">	
 						密码：<input id="password" type="password" name="password"><br>
 						</div>
-						<div class="ui field information">	
-						保存信息：<input id="checkbox" type="checkbox" name="checkbox" value="save">(不支持 IE浏览器)<br>
+						<div class="ui check">	
+						<input id="checkbox" type="checkbox" name="checkbox" value="save">&nbsp;记&nbsp;住&nbsp;密&nbsp;码&nbsp;<br>
 						</div>
 						<div class="m">
 							<input class="ui button" type="submit" value="登录">

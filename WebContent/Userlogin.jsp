@@ -9,6 +9,19 @@
 	</script>
 </head>
 <body>
+<%
+Cookie cookies[]=request.getCookies();
+String loginname="";
+String password="";
+if(cookies!=null){
+	for(int i=0;i<cookies.length;i++){
+		if(cookies[i].getName().equals("CustomCookie")){
+			loginname = cookies[i].getValue().split("#")[0];
+			password = cookies[i].getValue().split("#")[1];
+		}
+	}
+}
+%>
 	<div class="container">
 		<p class="title">唯 e 客户服务系统</p>
 		<div class="box">
@@ -16,13 +29,13 @@
 						<h2>登录页面</h2>
 						<form action="Login" method="post" name="userform" onsubmit="return checklogin()">
 						<div class="ui field">		
-						账号：<input id="username" type="text" name="username"><br>
+						账号：<input id="username" type="text" name="username" value="<%=loginname %>"><br>
 						</div>
 						<div class="ui field">	
-						密码：<input id="password" type="password" name="password"><br>
+						密码：<input id="password" type="password" name="password"value="<%=password %>"><br>
 						</div>
-						<div class="ui field">	
-						<input id="checkbox" type="checkbox" name="checkbox" value="save">&nbsp;&nbsp;记&nbsp;住 &nbsp;密&nbsp; 码<br>
+						<div class="ui check">	
+						<input id="checkbox" type="checkbox" name="checkbox" checked="checked" value="save">&nbsp;&nbsp;记&nbsp;住&nbsp;密&nbsp;码&nbsp;<br>
 						</div>
 						<div class="m">
 							<input class="ui button" type="submit" value="登录">
@@ -37,7 +50,7 @@
 	</div>
 	<br>
 	<p class="foot">
-		© WeiyiNetClient v1.0.0
+		© WeiyiNetClient v1.1.1
 		<br>
 	</p>
 </body>

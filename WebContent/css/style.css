@@ -136,3 +136,85 @@ a {
 		display: block;
 		width: 187px;
 	}
+
+.field {
+	clear: both;
+	margin: 0 0 1em;
+	font-size: 18px
+}
+.check {
+	clear: both;
+	margin: 0 0 1em;
+	font-size: 16px;
+	text-transform: none;
+	text-shadow: none;
+	font-weight: 700;
+	line-height: 1em;
+	font-style: normal;
+	text-decoration: none;
+	border-radius: .28571429rem;
+}
+.ui.info {
+	font-size:14px;
+	color:grey;
+}
+.ui.button {
+	cursor: pointer;
+	display: inline-block;
+	min-height: 1em;
+	outline: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: #2185d0;
+	color: #fff;
+	margin: 0 10px;
+	padding: .78571429em 1.5em;
+	text-transform: none;
+	text-shadow: none;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 1em;
+	font-style: normal;
+	text-decoration: none;
+	border-radius: .28571429rem;
+	box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+	transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+	will-change: '';
+	-webkit-tap-highlight-color: transparent
+}
+.ui.button:hover {
+	background-color: #1678c2;
+	box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset
+}
+.ui.red.button {
+	background: #e05d6f
+}
+.ui.red.button:hover {
+	background-color: #bb515f;
+	box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset
+}
+.ui.set.button {
+	background: #2da44d;
+}
+.ui.set.button:hover {
+	background-color: #299346;
+	box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset
+}
+.aleft {
+	float: left
+}
+.acenter {
+	float: none
+}
+.aright {
+	float: right
+}
+.aset {
+	color: #000;
+	text-decoration: underline
+}

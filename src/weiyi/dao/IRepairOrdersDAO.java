@@ -7,6 +7,6 @@ import weiyi.dao.vo.RepairOrders;
  * @author 广辉
  *
  */
-public interface IRepairOrdersDAO extends IDAO<RepairOrders, Integer> {
+public interface IRepairOrdersDAO extends IDAO<RepairOrders, String> {
 
 }

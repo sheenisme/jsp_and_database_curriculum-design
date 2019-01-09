@@ -3,8 +3,8 @@ package weiyi.dao.vo;
 import java.sql.Date;
 
 public class RepairOrders {
-	private String orderID;
-	private int customID;
+	private String orderId;
+	private int customId;
 	private Date applyTime;
 	private String linkName;
 	private String linkPhone;
@@ -13,17 +13,17 @@ public class RepairOrders {
 	private String type;//repair type故障的类型
 	private String description;//problem description 故障问题的详细描述
 	private String remark;
-	public String getOrderID() {
-		return orderID;
+	public String getOrderId() {
+		return orderId;
 	}
-	public void setOrderID(String orderID) {
-		this.orderID = orderID;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
-	public int getCustomID() {
-		return customID;
+	public int getCustomId() {
+		return customId;
 	}
-	public void setCustomID(int customID) {
-		this.customID = customID;
+	public void setCustomId(int customId) {
+		this.customId = customId;
 	}
 	public Date getApplyTime() {
 		return applyTime;

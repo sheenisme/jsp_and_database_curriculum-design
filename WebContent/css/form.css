@@ -82,6 +82,25 @@ a {
 	color: lightblue;
 	text-decoration: none
 }
+//未访问：蓝色、无下划线 
+a:link {
+	color: lightblue;
+	text-decoration:none;
+} 
+//激活：红色
+a:active:{
+	color: red; 
+}  
+//已访问：紫色、无下划线
+a:visited {
+	color:purple;
+	text-decoration:none;
+} 
+	 
+a:hover {
+	color: #fff;
+	text-decoration:underline;
+} 
 .m {
 	padding: 20px 0 8px 0
 }
@@ -118,6 +137,18 @@ a {
 	clear: both;
 	margin: 0 0 1em;
 	font-size: 18px
+}
+.check {
+	clear: both;
+	margin: 0 0 1em;
+	font-size: 17px;
+	ftext-transform: none;
+	text-shadow: none;
+	font-weight: 700;
+	line-height: 1.5em;
+	font-style: normal;
+	text-decoration: none;
+	border-radius: .28571429rem;
 }
 .ui.info {
 	font-size:14px;

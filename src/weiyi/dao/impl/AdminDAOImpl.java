@@ -35,9 +35,9 @@ public class AdminDAOImpl implements IAdminDAO {
         stat.setDate(7, vo.getDate());
         stat.setString(8, vo.getGrade());
         stat.setString(9, vo.getRemark());
-        int update = stat.executeUpdate();  
-        if(update>0){  
-            return update;  
+        int result = stat.executeUpdate();  
+        if(result>0){  
+            return result;  
         }  
         else{  
         	System.out.println("插入失败！-AdminDAOImpl.doCreate()方法");

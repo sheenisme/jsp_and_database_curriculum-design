@@ -7,7 +7,7 @@ import java.util.List;
  * @author 广辉
  *
  * @param <T> 数据对象名称
- * @param <K> 数据对象的逐渐类型
+ * @param <K> 数据对象的主键类型
  */
 public interface IDAO<T,K> {
 	/**

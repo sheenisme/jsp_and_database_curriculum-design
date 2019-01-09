@@ -58,17 +58,7 @@ body{
 </head>
 <body>
 <div id="header">
-	<div class="container">
-<!-- 		<div class="row"> -->
-<!-- 			<div class="col-md-3" class=“active”>主页</div> -->
-<!-- 			<div class="col-md-3"><a href="http://www.sheensong.top/wordpress">论坛</a></div> -->
-<%-- 			<%   --%>
-<!-- 				String username=request.getParameter("username"); -->
-<%-- 			%> --%>
-<%-- 			<div class="col-md-3">欢迎<%=username %>！</div> --%>
-<!-- 			<div class="col-md-3">退出登录</div> -->
-<!-- 		</div> -->
-		
+	<div class="container">	
 		<ul class="nav nav-tabs nav-justified" role="tablist">
 			<li role="presentation" class="active"><a href="">主页</a></li>
 			<li role="presentation"><a href="http://www.sheensong.top/wordpress">论坛</a></li>
@@ -76,7 +66,7 @@ body{
 			<%
 				String username=request.getParameter("username"); 
 			%> 
-			<li role="presentation"><a href="" disabled=“disabled”><%=username %>用户</a></li>
+			<li role="presentation"><a><%=username %>用户</a></li>
 			<li role="presentation"><a href="login.jsp">退出登录</a></li>		
 		</ul>
 		<script src="./js/bootstrap.min.js"></script>
@@ -87,17 +77,17 @@ body{
 <div id="main">
 	<div id="left" class="container">
 		<ul id="navigation">
-			<li><a href="" >我 要 报 修</a></li>
+			<li><a href="" >&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;</a></li>
 			<li><a href="" >查看维修记录</a></li>
 			<li><a href="">评价此次维修</a></li>
-			<li><a href="#">查看所有维修记录</a></li>
+			<li><a href="ShowRepairOrders.jsp" target="rightFrame">查看所有记录</a></li>
 			<li><a href="#">导航3</a></Li>
 			<li><a href="">导航</a></li>
 			<li><a href="">导航4</a></li>
 		</ul>
 	</div>
 	<div id="right" class="container">
-		<iframe width="700px"  height="500px"  name="rightFrame"></iframe>
+		<iframe width="850px"  height="500px"  name="rightFrame"></iframe>
 	</div>
 </div>
 
