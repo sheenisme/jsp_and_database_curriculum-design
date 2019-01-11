@@ -138,7 +138,7 @@ public class AdminDAOImpl implements IAdminDAO {
         stat.setString(1,name);  
         ResultSet rs = stat.executeQuery(); 
         Admin vo=null;
-        if(rs.next()){      	
+        while(rs.next()){      	
         	vo=new Admin();
         	vo=this.findById(rs.getInt(1));
            	list.add(vo);
@@ -154,7 +154,7 @@ public class AdminDAOImpl implements IAdminDAO {
         stat.setString(1,email);  
         ResultSet rs = stat.executeQuery(); 
         Admin vo=null;
-        if(rs.next()){      	
+        while(rs.next()){      	
         	vo=new Admin();
         	vo=this.findById(rs.getInt(1));
            	list.add(vo);

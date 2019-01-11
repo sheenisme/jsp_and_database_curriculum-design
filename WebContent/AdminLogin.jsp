@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>唯 e 客户服务系统</title>
 	<link rel="stylesheet" href="./css/style.css" />
-	<script type="text/javascript" src="js/login.js">
+	<script type="text/javascript" src="js/Check.js.js">
 	</script>
 </head>
 <body>

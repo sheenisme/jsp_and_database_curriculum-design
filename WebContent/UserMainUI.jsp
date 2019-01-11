@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
 <title>主页</title>
 <style>
 body{
@@ -12,19 +13,21 @@ body{
 }
 #main{
 			margin: 30px auto;
-			width:1002px;
-			height:500px;
+			width:100%;
+			height:800px;
 			
      }
 #left{
+			margin:6% 0px 2% 1%;
 			background:#fff;
-			width:202px;
-			height:400px;
+			width:15%;
+			height:60%;
 			float:left;
 	  }
 #right{
 			width:800px;
-			height:1000px;
+			height:100%;
+			width:80%;
 			float:right;
        }
 #navigation li{
@@ -45,15 +48,12 @@ body{
 		width: 187px;
 		text-decoration:none;
 		}
-
-#footer{
-		position: center;
-		width: 1100px;
-		height: 50px;
-		padding: 50px;
-		clear: left;
-		float:center;
-	}
+#foot {
+	position: bottom;
+	margin: 15px 15px 0;
+	font-size: 15px;
+	float:right;
+}
 </style>
 </head>
 <body>
@@ -64,10 +64,10 @@ body{
 			<li role="presentation"><a href="http://www.sheensong.top/wordpress">论坛</a></li>
 			<li role="presentation"><a href="">反馈</a></li>
 			<%
-				String username=request.getParameter("username"); 
+				String name=(String)request.getSession().getAttribute("CustomSession"); 
 			%> 
-			<li role="presentation"><a><%=username %>用户</a></li>
-			<li role="presentation"><a href="login.jsp">退出登录</a></li>		
+			<li class="disabled" role="presentation"><a><%=name %>用户</a></li>
+			<li role="presentation"><a href="UserLogin.jsp">退出登录</a></li>		
 		</ul>
 		<script src="./js/bootstrap.min.js"></script>
 	</div>
@@ -77,7 +77,7 @@ body{
 <div id="main">
 	<div id="left" class="container">
 		<ul id="navigation">
-			<li><a href="" >&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;</a></li>
+			<li><a href="CreateRepairOreders.jsp" target="rightFrame">&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;</a></li>
 			<li><a href="" >查看维修记录</a></li>
 			<li><a href="">评价此次维修</a></li>
 			<li><a href="ShowRepairOrders.jsp" target="rightFrame">查看所有记录</a></li>
@@ -87,14 +87,14 @@ body{
 		</ul>
 	</div>
 	<div id="right" class="container">
-		<iframe width="850px"  height="500px"  name="rightFrame"></iframe>
+		<iframe width="92%"  height="100%"  name="rightFrame"></iframe>
 	</div>
 </div>
 
 
-<div id="footer" align="center" class="container">
-	<p id="foot" class="foot" align="center"> 
-	© WeiyiNetClient v1.0.0
+<div id="foot" align="center" class="container">
+	<p align="center"> 
+		© WeiyiNetClient v1.1.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系统当前时间为：<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>
 	<br>
 	</p>
 </div>

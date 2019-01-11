@@ -3,7 +3,7 @@ package weiyi.dao.proxy;
 import java.util.List;
 
 import weiyi.dao.IRepairOrdersDAO;
-import weiyi.dao.databaseconnection.DatabaseConnection;
+import weiyi.dao.dbc.DatabaseConnection;
 import weiyi.dao.impl.RepairOrdersDAOImpl;
 import weiyi.dao.vo.RepairOrders;
 
@@ -19,7 +19,7 @@ public class RepairOrdersDAOProxy implements IRepairOrdersDAO{
 	@Override
 	public int doCreate(RepairOrders vo) throws Exception {
 		int flag = -1;  
-        if(dao.findById(vo.getOrderId())==null){  
+        if(dao.findById(vo.getOrderId()) == null){  
             flag = dao.doCreate(vo);  
         }  
         dbc.close();  

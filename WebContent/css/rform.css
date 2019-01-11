@@ -112,7 +112,6 @@ a {
 	color: rgba(0,0,0,.87);
 	border-radius: .28571429rem;
 	box-shadow: 0 0 0 0 transparent inset;
-	-webkit-transition: color .1s ease, border-color .1s ease;
 	transition: color .1s ease, border-color .1s ease
 }
  .ui input[type=text] {
@@ -127,7 +126,6 @@ a {
 	color: rgba(0,0,0,.87);
 	border-radius: .28571429rem;
 	box-shadow: 0 0 0 0 transparent inset;
-	-webkit-transition: color .1s ease, border-color .1s ease;
 	transition: color .1s ease, border-color .1s ease
 }
 .ui input:focus {
@@ -138,6 +136,11 @@ a {
 	clear: both;
 	margin: 0 0 1em;
 	font-size: 18px
+}
+.date {
+	clear: both;
+	margin: 0 0 1em;
+	font-size: 14px
 }
 .field {
 	clear: both;

@@ -3,7 +3,7 @@ package weiyi.dao.proxy;
 import java.util.List;
 
 import weiyi.dao.IAdminDAO;
-import weiyi.dao.databaseconnection.DatabaseConnection;
+import weiyi.dao.dbc.DatabaseConnection;
 import weiyi.dao.impl.AdminDAOImpl;
 import weiyi.dao.vo.Admin;
 

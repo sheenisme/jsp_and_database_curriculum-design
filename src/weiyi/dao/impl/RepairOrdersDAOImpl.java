@@ -19,7 +19,7 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 	
 	@Override
 	public int doCreate(RepairOrders vo) throws Exception {
-		String sql = "{? = call RepairOrdersInsert(?,?,?,?,?,?,?,?,?,?)}"; 
+		String sql = "{call RepairOrdersInsert(?,?,?,?,?,?,?,?,?,?)}"; 
 	    stmt = con.prepareCall(sql);
 	    stmt.setString(1, vo.getOrderId());
 	    stmt.setInt(2, vo.getCustomId());
@@ -31,8 +31,8 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 	    stmt.setString(8,vo.getType());
 	    stmt.setString(9, vo.getDescription());
 	    stmt.setString(10, vo.getRemark());
-	    stmt.execute();
-	    int result=stmt.getInt(1);
+	   
+	    int result=stmt.executeUpdate();
 	   if(result > 0) {
 		   return result;
 	   }
@@ -43,12 +43,13 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 
 	@Override
 	public List<RepairOrders> findAll() throws Exception {
-		String sql = "{call RepairOrdersSelectALL}"; 
+		String sql = "{call RepairOrdersSelectALL(?)}"; 
 	    stmt = con.prepareCall(sql);
+	    stmt.registerOutParameter(1,java.sql.Types.INTEGER);
 	    ResultSet rs = stmt.executeQuery();  
 	    RepairOrders vo=null;
 	    List<RepairOrders> list = new ArrayList<RepairOrders>();
-	    if(rs.next()){   
+	    while(rs.next()){   
 	       	vo=new RepairOrders();  
 	       	vo.setOrderId(rs.getString(1));
 	       	vo.setCustomId(rs.getInt(2));
@@ -61,18 +62,19 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 	       	vo.setDescription(rs.getString(9));
 	       	vo.setRemark(rs.getString(10));
 	       	list.add(vo);
+	       	//System.out.println(vo.getOrderId());
 	    }    
 		return list;
 	}
 
 	@Override
 	public RepairOrders findById(String id) throws Exception {
-		String sql = "{call RepairOrdersSelcet(?)}"; 
+		String sql = "{call RepairOrdersSelect(?)}"; 
 	    stmt = con.prepareCall(sql);
 	    stmt.setString(1, id);
 	    ResultSet rs = stmt.executeQuery();  
 	    RepairOrders vo=null;
-	    if(rs.next()){   
+	    while(rs.next()){   
 	       	vo=new RepairOrders();  
 	       	vo.setOrderId(rs.getString(1));
 	       	vo.setCustomId(rs.getInt(2));

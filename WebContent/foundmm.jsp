@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>找回密码</title>
 	<link rel="stylesheet" href="./css/form.css" />
-	<script type="text/javascript" src="js/login.js">
+	<script type="text/javascript" src="js/Check.js">
 	</script>
 </head>
 <body>
@@ -15,7 +15,7 @@
 				<div id="register_box">
 						<h2>找回密码页面</h2>
 						<!--  不设置为：action="Foundmm" 因为没有邮箱服务器，很难发送邮件  -->
-						<form action="GetUserName" method="post" name="registerform" onsubmit="return checkemail()">
+						<form action="#" method="post" name="registerform" onsubmit="return checkemail()">
 						<div class="ui foundmm">	
 						  邮   箱：    <input id="email" type="text" name="email"><br>
 						</div>
@@ -30,7 +30,7 @@
 	</div>
 	<br><br>
 	<p class="foot">
-		© WeiyiNetClient v1.0.0
+		© WeiyiNetClient v1.1.1
 		<br>
 	</p>
 </body>

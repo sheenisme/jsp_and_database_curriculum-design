@@ -7,6 +7,7 @@ public class Custom {
 	private String loginName;
 	private String password;
 	private String name;
+	private String sex;
 	private String email;
 	private String phone;
 	private String address;
@@ -86,5 +87,11 @@ public class Custom {
 	}
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 }

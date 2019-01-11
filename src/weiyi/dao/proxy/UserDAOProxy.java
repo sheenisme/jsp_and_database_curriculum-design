@@ -1,8 +1,8 @@
 package weiyi.dao.proxy; 
 
-import weiyi.MD5.EncryptImp;
+import weiyi.control.EncryptImp;
 import weiyi.dao.*;
-import weiyi.dao.databaseconnection.DatabaseConnection;
+import weiyi.dao.dbc.DatabaseConnection;
 import weiyi.dao.vo.*;   
 import weiyi.dao.impl.UserDAOImpl;
 

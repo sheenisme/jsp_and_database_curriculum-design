@@ -40,7 +40,7 @@ public class MakeOrderNum {
 	 * 获取订单号
 	 * @return 订单号
 	 */
-	public String getOrderNumber() {
+	public static String getOrderNumber() {
 		try {			
 			synchronized (lockObj) {
 				// 取系统当前时间作为订单号变量前半部分，精确到毫秒

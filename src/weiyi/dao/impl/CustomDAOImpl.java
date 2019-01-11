@@ -19,20 +19,21 @@ public class CustomDAOImpl implements ICustomDAO{
 	
 	@Override
 	public int doCreate(Custom vo) throws Exception {
-		String sql = "insert into custom values(?,?,?,?,?,?,?,?,?,?,?) ";  
+		String sql = "insert into custom values(?,?,?,?,?,?,?,?,?,?,?,?) ";  
         stat = con.prepareStatement(sql);   
         //这里是自增的，不用写该语句stat.setInt(1, vo.getId());  
         stat.setString(1, vo.getLoginName());  
         stat.setString(2, vo.getPassword());  
         stat.setString(3, vo.getName());
-        stat.setString(4, vo.getEmail());
-        stat.setString(5, vo.getPhone());
-        stat.setString(6, vo.getAddress());
-        stat.setDate(7, vo.getBirthday());
-        stat.setDate(8, vo.getDate());
-        stat.setString(9, vo.getPoint());
-        stat.setString(10, vo.getUnit());
-        stat.setString(11, vo.getRemark());
+        stat.setString(4, vo.getSex());
+        stat.setString(5, vo.getEmail());
+        stat.setString(6, vo.getPhone());
+        stat.setString(7, vo.getAddress());
+        stat.setDate(8, vo.getBirthday());
+        stat.setDate(9, vo.getDate());
+        stat.setString(10, vo.getPoint());
+        stat.setString(11, vo.getUnit());
+        stat.setString(12, vo.getRemark());
         int update = stat.executeUpdate();  
         if(update>0){  
             return update;  
@@ -57,14 +58,15 @@ public class CustomDAOImpl implements ICustomDAO{
             vo.setLoginName(rs.getString(2));
             vo.setPassword(rs.getString(3));
             vo.setName(rs.getString(4));
-            vo.setEmail(rs.getString(5));
-            vo.setPhone(rs.getString(6));
-            vo.setAddress(rs.getString(7));
-            vo.setBirthday(rs.getDate(8));
-            vo.setDate(rs.getDate(9));
-            vo.setPoint(rs.getString(10));
-            vo.setUnit(rs.getString(11));
-            vo.setRemark(rs.getString(12));
+            vo.setSex(rs.getString(5));
+            vo.setEmail(rs.getString(6));
+            vo.setPhone(rs.getString(7));
+            vo.setAddress(rs.getString(8));
+            vo.setBirthday(rs.getDate(9));
+            vo.setDate(rs.getDate(10));
+            vo.setPoint(rs.getString(11));
+            vo.setUnit(rs.getString(12));
+            vo.setRemark(rs.getString(13));
             list.add(vo);  
         }  
         return list;
@@ -72,27 +74,33 @@ public class CustomDAOImpl implements ICustomDAO{
 
 	@Override
 	public Custom findById(Integer id) throws Exception {
-		 String sql = "select * from custom where id= ? ";  
-	     stat = con.prepareStatement(sql);  
-	     stat.setInt(1,id);  
-	     ResultSet rs = stat.executeQuery();  
-	     Custom vo=null;
-	     if(rs.next()){   
-	       	vo=new Custom();  
-	        vo.setId(id);
-	        vo.setLoginName(rs.getString(1));
-            vo.setPassword(rs.getString(2));
-            vo.setName(rs.getString(3));
-            vo.setEmail(rs.getString(4));
-            vo.setPhone(rs.getString(5));
-            vo.setAddress(rs.getString(6));
-            vo.setBirthday(rs.getDate(7));
-            vo.setDate(rs.getDate(8));
-            vo.setPoint(rs.getString(9));
-            vo.setUnit(rs.getString(10));
-            vo.setRemark(rs.getString(11));
-	    }    
-		return vo;
+		if(id != null ) {
+			String sql = "select * from custom where id= ? ";  
+			stat = con.prepareStatement(sql);  
+			stat.setInt(1,id);  
+			ResultSet rs = stat.executeQuery();  
+			Custom vo=null;
+			if(rs.next()){   
+				vo=new Custom();  
+				vo.setId(rs.getInt(1));
+	            vo.setLoginName(rs.getString(2));
+	            vo.setPassword(rs.getString(3));
+	            vo.setName(rs.getString(4));
+	            vo.setSex(rs.getString(5));
+	            vo.setEmail(rs.getString(6));
+	            vo.setPhone(rs.getString(7));
+	            vo.setAddress(rs.getString(8));
+	            vo.setBirthday(rs.getDate(9));
+	            vo.setDate(rs.getDate(10));
+	            vo.setPoint(rs.getString(11));
+	            vo.setUnit(rs.getString(12));
+	            vo.setRemark(rs.getString(13));
+			}    
+			return vo;
+		}
+		else {
+			return null;
+		}
 	}
 
 	@Override
@@ -116,14 +124,15 @@ public class CustomDAOImpl implements ICustomDAO{
         stat.setString(1, vo.getLoginName());  
         stat.setString(2, vo.getPassword());  
         stat.setString(3, vo.getName());
-        stat.setString(4, vo.getEmail());
-        stat.setString(5, vo.getPhone());
-        stat.setString(6, vo.getAddress());
-        stat.setDate(7, vo.getBirthday());
-        stat.setDate(8, vo.getDate());
-        stat.setString(9, vo.getPoint());
-        stat.setString(10, vo.getUnit());
-        stat.setString(11, vo.getRemark());
+        stat.setString(4, vo.getSex());
+        stat.setString(5, vo.getEmail());
+        stat.setString(6, vo.getPhone());
+        stat.setString(7, vo.getAddress());
+        stat.setDate(8, vo.getBirthday());
+        stat.setDate(9, vo.getDate());
+        stat.setString(10, vo.getPoint());
+        stat.setString(11, vo.getUnit());
+        stat.setString(12, vo.getRemark());
         int update=stat.executeUpdate();
         if(update>0) {
         	return update;
@@ -141,7 +150,7 @@ public class CustomDAOImpl implements ICustomDAO{
         stat.setString(1,name);  
         ResultSet rs = stat.executeQuery(); 
         Custom vo=null;
-        if(rs.next()){      	
+        while(rs.next()){      	
         	vo=new Custom();
         	vo=this.findById(rs.getInt(1));
            	list.add(vo);
@@ -157,7 +166,7 @@ public class CustomDAOImpl implements ICustomDAO{
         stat.setString(1,email);  
         ResultSet rs = stat.executeQuery(); 
         Custom vo=null;
-        if(rs.next()){      	
+        while(rs.next()){      	
         	vo=new Custom();
         	vo=this.findById(rs.getInt(1));
            	list.add(vo);

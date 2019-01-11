@@ -3,7 +3,7 @@ package weiyi.dao;
 import java.util.List;
 
 import weiyi.dao.vo.Admin;
-import weiyi.dao.vo.User;
+
 
 /**
  * 针对Admin对象，新增DAO操作的功能
