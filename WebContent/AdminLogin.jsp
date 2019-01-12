@@ -5,33 +5,49 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>唯 e 客户服务系统</title>
 	<link rel="stylesheet" href="./css/style.css" />
-	<script type="text/javascript" src="js/Check.js.js">
+	<script type="text/javascript" src="js/Check.js">
 	</script>
 </head>
 <body>
+<%
+Cookie cookies[]=request.getCookies();
+String name="";
+String password="";
+if(cookies!=null){
+	for(int i=0;i<cookies.length;i++){
+		if(cookies[i].getName().equals("AdminCookie")){
+			name = cookies[i].getValue().split("#")[0];
+			password = cookies[i].getValue().split("#")[1];
+			//System.out.println("AdminCookie中的名字和密码是："+name+"  "+password);
+		}
+	}
+}
+%>
 	<div class="container">
 		<p class="title">唯 e 客户服务系统</p>
 		<div class="box">
-				<div id="login_box">
-						<h2>管理员登录页面</h2>
-						<form action="Login" method="post" name="userform" onsubmit="return checklogin()">
-						<div class="ui field">		
-						账号：<input id="username" type="text" name="username"><br>
-						</div>
-						<div class="ui field">	
-						密码：<input id="password" type="password" name="password"><br>
-						</div>
-						<div class="ui check">	
-						<input id="checkbox" type="checkbox" name="checkbox" value="save">&nbsp;记&nbsp;住&nbsp;密&nbsp;码&nbsp;<br>
-						</div>
-						<div class="m">
-							<input class="ui button" type="submit" value="登录">
-							<a href="register.jsp"><input class="ui button" type="button"  value="注册"></a>
-						</div>
-						</form>	
+			<div id="login_box">
+			<h2>管理员登录页面</h2>
+			<form action="Login" method="post" name="userform" onsubmit="return checklogin()">
+				<input type="hidden" name="action" value="AdminLogin">
+				<div class="ui field">		
+				账号：<input id="name" type="text" name="name" value="<%=name %>"><br>
 				</div>
-				<br>
-				<div><pre>唯 e 客户服务系统-管理员登录页面!    <a href="foundmm.jsp">找回密码</a></pre></div> 
+				<div class="ui field">	
+				密码：<input id="password" type="password" name="password" value="<%=password %>"><br>
+				</div>
+				<div class="ui check">	
+					<input id="checkbox" type="checkbox" checked="checked" name="autoLogin" value="save">&nbsp;记&nbsp;住&nbsp;密&nbsp;码&nbsp;<br>
+				</div>
+				<div class="m">
+					<input class="ui button" type="submit" value="登录">
+				</div>
+			</form>	
+			</div>
+			<br>
+			<div>
+				<pre>唯 e 客户服务系统-管理员登录页面!    <a href="foundmm.jsp">找回密码</a></pre>
+			</div> 
 		</div>
 	</div>
 	<br><br>

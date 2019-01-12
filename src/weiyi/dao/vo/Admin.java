@@ -1,6 +1,6 @@
 package weiyi.dao.vo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Admin {
 	private int id;
@@ -11,8 +11,9 @@ public class Admin {
 	private String email;
 	private String phone;
 	private String address;
-	private Date date;
+	private Timestamp date;
 	private String grade;
+	private int upperId;
 	private String remark;
 	
 	public int getId() {
@@ -57,10 +58,10 @@ public class Admin {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
 	public String getGrade() {
@@ -80,5 +81,11 @@ public class Admin {
 	}
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+	public int getUpperId() {
+		return upperId;
+	}
+	public void setUpperId(int upperId) {
+		this.upperId = upperId;
 	}	
 }

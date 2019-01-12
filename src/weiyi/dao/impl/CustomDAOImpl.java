@@ -30,7 +30,7 @@ public class CustomDAOImpl implements ICustomDAO{
         stat.setString(6, vo.getPhone());
         stat.setString(7, vo.getAddress());
         stat.setDate(8, vo.getBirthday());
-        stat.setDate(9, vo.getDate());
+        stat.setTimestamp(9, vo.getDate());
         stat.setString(10, vo.getPoint());
         stat.setString(11, vo.getUnit());
         stat.setString(12, vo.getRemark());
@@ -63,7 +63,7 @@ public class CustomDAOImpl implements ICustomDAO{
             vo.setPhone(rs.getString(7));
             vo.setAddress(rs.getString(8));
             vo.setBirthday(rs.getDate(9));
-            vo.setDate(rs.getDate(10));
+            vo.setDate(rs.getTimestamp(10));
             vo.setPoint(rs.getString(11));
             vo.setUnit(rs.getString(12));
             vo.setRemark(rs.getString(13));
@@ -91,7 +91,7 @@ public class CustomDAOImpl implements ICustomDAO{
 	            vo.setPhone(rs.getString(7));
 	            vo.setAddress(rs.getString(8));
 	            vo.setBirthday(rs.getDate(9));
-	            vo.setDate(rs.getDate(10));
+	            vo.setDate(rs.getTimestamp(10));
 	            vo.setPoint(rs.getString(11));
 	            vo.setUnit(rs.getString(12));
 	            vo.setRemark(rs.getString(13));
@@ -129,7 +129,7 @@ public class CustomDAOImpl implements ICustomDAO{
         stat.setString(6, vo.getPhone());
         stat.setString(7, vo.getAddress());
         stat.setDate(8, vo.getBirthday());
-        stat.setDate(9, vo.getDate());
+        stat.setTimestamp(9, vo.getDate());
         stat.setString(10, vo.getPoint());
         stat.setString(11, vo.getUnit());
         stat.setString(12, vo.getRemark());

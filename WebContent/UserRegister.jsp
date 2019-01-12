@@ -44,7 +44,7 @@
 						<div class="ui date">
 						出生日期:&nbsp;<input class="Wdate" type="text" name="birthday" onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})" value="">	
 						</div>
-						<input type="hidden" name="date" value=<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>>	
+						<input type="hidden" name="date" value="<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>">	
 						<input type="hidden" name="point" value="10">
 						<div class="ui register">	
 						单&nbsp;&nbsp;&nbsp;&nbsp;位:&nbsp;<input id="unit" type="text" name="unit"><br>
@@ -58,7 +58,7 @@
 					</form>	
 				</div>
 				<br>
-				<div><pre>唯 e 客户服务系统 - 注册账户页面！</pre></div> 
+				<div><pre>唯 e 客户服务系统 - 注册账户页面！<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %></pre></div> 
 		</div>
 	</div>
 	<br><br>

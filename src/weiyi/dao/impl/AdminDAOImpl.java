@@ -1,6 +1,7 @@
 package weiyi.dao.impl;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -23,18 +24,20 @@ public class AdminDAOImpl implements IAdminDAO {
     
 	@Override
 	public int doCreate(Admin vo) throws Exception {
-		String sql = "insert into admin values(?,?,?,?,?,?,?,?,?) ";  
+		String sql = "insert into admin values(?,?,?,?,?,?,?,?,?,?,?) ";  
         stat = con.prepareStatement(sql);   
         //这里是自增的，不用写该语句stat.setInt(1, vo.getId());  
         stat.setString(1, vo.getLoginName());  
         stat.setString(2, vo.getPassword());  
         stat.setString(3, vo.getName());
-        stat.setString(4, vo.getEmail());
-        stat.setString(5, vo.getPhone());
-        stat.setString(6, vo.getAddress());
-        stat.setDate(7, vo.getDate());
-        stat.setString(8, vo.getGrade());
-        stat.setString(9, vo.getRemark());
+        stat.setString(4, vo.getSex());
+        stat.setString(5, vo.getEmail());
+        stat.setString(6, vo.getPhone());
+        stat.setString(7, vo.getAddress());
+        stat.setTimestamp(8, vo.getDate());
+        stat.setString(9, vo.getGrade());
+        stat.setInt(10, vo.getUpperId());
+        stat.setString(11, vo.getRemark());
         int result = stat.executeUpdate();  
         if(result>0){  
             return result;  
@@ -59,12 +62,14 @@ public class AdminDAOImpl implements IAdminDAO {
             vo.setLoginName(rs.getString(2));
             vo.setPassword(rs.getString(3));
             vo.setName(rs.getString(4));
-            vo.setEmail(rs.getString(5));
-            vo.setPhone(rs.getString(6));
-            vo.setAddress(rs.getString(7));
-            vo.setDate(rs.getDate(8));
-            vo.setGrade(rs.getString(9));
-            vo.setRemark(rs.getString(10));
+            vo.setSex(rs.getString(5));
+            vo.setEmail(rs.getString(6));
+            vo.setPhone(rs.getString(7));
+            vo.setAddress(rs.getString(8));
+            vo.setDate(rs.getTimestamp(9));
+            vo.setGrade(rs.getString(10));
+            vo.setUpperId(rs.getInt(11));
+            vo.setRemark(rs.getString(12));
             list.add(vo);  
         }  
         return list;
@@ -79,16 +84,19 @@ public class AdminDAOImpl implements IAdminDAO {
 	     Admin vo=null;
 	     if(rs.next()){   
 	       	vo=new Admin();  
-	        vo.setId(id);
-	        vo.setLoginName(rs.getString(1));
-	        vo.setPassword(rs.getString(2));
-	        vo.setName(rs.getString(3));
-	        vo.setEmail(rs.getString(4));
-	        vo.setPhone(rs.getString(5));
-	        vo.setAddress(rs.getString(6));
-	        vo.setDate(rs.getDate(7));
-	        vo.setGrade(rs.getString(8));
-	        vo.setRemark(rs.getString(9));
+	        vo=new Admin();  
+            vo.setId(rs.getInt(1));
+            vo.setLoginName(rs.getString(2));
+            vo.setPassword(rs.getString(3));
+            vo.setName(rs.getString(4));
+            vo.setSex(rs.getString(5));
+            vo.setEmail(rs.getString(6));
+            vo.setPhone(rs.getString(7));
+            vo.setAddress(rs.getString(8));
+            vo.setDate(rs.getTimestamp(9));
+            vo.setGrade(rs.getString(10));
+            vo.setUpperId(rs.getInt(11));
+            vo.setRemark(rs.getString(12));
 	    }    
 		return vo;
 	}
@@ -109,18 +117,20 @@ public class AdminDAOImpl implements IAdminDAO {
 
 	@Override
 	public int doUpdate(Admin vo) throws Exception {
-    	String sql = "update admin set loginname=?,password=?,name=?，email=?,phone=?,address=?,date=?,grade=?,remark=? where id=?";  
-        stat = con.prepareStatement(sql);     
+    	String sql = "update admin set loginname=?,password=?,name=?，sex=?,email=?,phone=?,address=?,date=?,grade=?,uppid=?,remark=? where id=?";  
+        stat = con.prepareStatement(sql);    
         stat.setString(1, vo.getLoginName());  
         stat.setString(2, vo.getPassword());  
         stat.setString(3, vo.getName());
-        stat.setString(4, vo.getEmail());
-        stat.setString(5, vo.getPhone());
-        stat.setString(6, vo.getAddress());
-        stat.setDate(7, vo.getDate());
-        stat.setString(8, vo.getGrade());
-        stat.setString(9, vo.getRemark());
-        stat.setInt(10, vo.getId());
+        stat.setString(4, vo.getSex());
+        stat.setString(5, vo.getEmail());
+        stat.setString(6, vo.getPhone());
+        stat.setString(7, vo.getAddress());
+        stat.setTimestamp(8, vo.getDate());
+        stat.setString(9, vo.getGrade());
+        stat.setInt(10, vo.getUpperId());
+        stat.setString(11, vo.getRemark());
+        stat.setInt(12, vo.getId());
         int update=stat.executeUpdate();
         if(update>0) {
         	return update;

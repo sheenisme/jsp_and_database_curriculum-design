@@ -75,7 +75,6 @@ public class Conversion {
 								try {
 									date[i]= new Date(new SimpleDateFormat("yyyy-MM-dd").parse(str[i]).getTime());
 								} catch (ParseException e) {
-									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
 								f.set(t, date);
@@ -86,7 +85,6 @@ public class Conversion {
 								try {
 									date[i]= new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").parse(str[i]);
 								} catch (ParseException e) {
-									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
 								f.set(t, date);
@@ -114,7 +112,6 @@ public class Conversion {
 								date = new Date(new SimpleDateFormat("yyyy-MM-dd").parse(str).getTime());
 								f.set(t, date);
 							} catch (ParseException e) {
-								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
 							
@@ -124,7 +121,7 @@ public class Conversion {
 								time=new Timestamp(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(str).getTime());
 								f.set(t, time);
 							} catch (ParseException e) {
-								// TODO Auto-generated catch block
+								System.out.println("timestamp类型的参数写入到值对象时发生错误！");
 								e.printStackTrace();
 							}
 						}else if(type==java.util.Date.class){//java.util.Date类型转换
@@ -133,7 +130,6 @@ public class Conversion {
 								date= new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").parse(str);
 								f.set(t, date);
 							} catch (ParseException e) {
-								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
 						}
@@ -147,7 +143,6 @@ public class Conversion {
 			}
  
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

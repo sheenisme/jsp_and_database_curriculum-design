@@ -102,7 +102,7 @@ public class LoginServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			//如果登录名为空
-			if(list.isEmpty()) {
+			if(list==null) {
 				System.out.println("登录失败！原因：登录名为空请输入有效的登录名！");
 				request.getRequestDispatcher("/AdminLogin.jsp").forward(request, response);
 			}else {//如果登录名非空
@@ -117,7 +117,7 @@ public class LoginServlet extends HttpServlet {
 							//System.out.println("要存入cookie中的名字是："+name);
 			        		//System.out.println("要存入cookie中的密码是"+password);
 							request.getSession().setAttribute("AdminSession", vo.getLoginName());
-			                Cookie cookie = new Cookie("AdminCookie",name+"#"+password);
+			                Cookie cookie = new Cookie("AdminCookie",name+"#"+password+"#"+vo.getId());
 			                cookie.setMaxAge(60 * 60 * 24); 
 			                response.addCookie(cookie);
 						}

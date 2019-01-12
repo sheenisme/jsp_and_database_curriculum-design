@@ -33,7 +33,7 @@ if(cookies!=null){
 				<input type="hidden" name="customId" value=<%=loginId %>>
 				<label style="font-size: 18px;font-weight: 50;text-align: center;">编号是：<%=loginId %>&nbsp;&nbsp;的客户，您好！</label>
 				<br>
-				<input type="hidden" name="applyTime" value=<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,23) %>>
+				<input type="hidden" name="applyTime" value="<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,23) %>">
 				<label style="font-size: 18px;font-weight: 50;text-align: center;">联系人：</label>
 				<input class="form-control" type="text" style="width:50%" name="linkName">
 				<label style="font-size: 18px;font-weight: 50;text-align: center;">联系电话：</label>

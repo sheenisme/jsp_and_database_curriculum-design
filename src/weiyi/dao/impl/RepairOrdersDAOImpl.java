@@ -23,23 +23,23 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 	    stmt = con.prepareCall(sql);
 	    stmt.setString(1, vo.getOrderId());
 	    stmt.setInt(2, vo.getCustomId());
-	    stmt.setDate(3, vo.getApplyTime());
+	    stmt.setTimestamp(3, vo.getApplyTime());
 	    stmt.setString(4,vo.getLinkName());
 	    stmt.setString(5, vo.getLinkPhone());
 	    stmt.setString(6, vo.getLinkAddress());
-	    stmt.setDate(7, vo.getRepairTime());
+	    stmt.setTimestamp(7, vo.getRepairTime());
 	    stmt.setString(8,vo.getType());
 	    stmt.setString(9, vo.getDescription());
 	    stmt.setString(10, vo.getRemark());
 	   
 	    int result=stmt.executeUpdate();
-	   if(result > 0) {
-		   return result;
-	   }
-	   else {
-		   return -1;
-	   }
-	}
+	    if(result > 0) {
+		    return result;
+	    }
+	    else {
+		    return -1;
+	    }
+	 }
 
 	@Override
 	public List<RepairOrders> findAll() throws Exception {
@@ -53,11 +53,11 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 	       	vo=new RepairOrders();  
 	       	vo.setOrderId(rs.getString(1));
 	       	vo.setCustomId(rs.getInt(2));
-	       	vo.setApplyTime(rs.getDate(3));
+	       	vo.setApplyTime(rs.getTimestamp(3));
 	       	vo.setLinkName(rs.getString(4));
 	       	vo.setLinkPhone(rs.getString(5));
 	       	vo.setLinkAddress(rs.getString(6));
-	       	vo.setRepairTime(rs.getDate(7));
+	       	vo.setRepairTime(rs.getTimestamp(7));
 	       	vo.setType(rs.getString(8));
 	       	vo.setDescription(rs.getString(9));
 	       	vo.setRemark(rs.getString(10));
@@ -78,11 +78,11 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 	       	vo=new RepairOrders();  
 	       	vo.setOrderId(rs.getString(1));
 	       	vo.setCustomId(rs.getInt(2));
-	       	vo.setApplyTime(rs.getDate(3));
+	       	vo.setApplyTime(rs.getTimestamp(3));
 	       	vo.setLinkName(rs.getString(4));
 	       	vo.setLinkPhone(rs.getString(5));
 	       	vo.setLinkAddress(rs.getString(6));
-	       	vo.setRepairTime(rs.getDate(7));
+	       	vo.setRepairTime(rs.getTimestamp(7));
 	       	vo.setType(rs.getString(8));
 	       	vo.setDescription(rs.getString(10));
 	       	vo.setRemark(rs.getString(11));
@@ -96,11 +96,11 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 	    stmt = con.prepareCall(sql);
 	    stmt.setString(1, vo.getOrderId());
 	    stmt.setInt(2, vo.getCustomId());
-	    stmt.setDate(3, vo.getApplyTime());
+	    stmt.setTimestamp(3, vo.getApplyTime());
 	    stmt.setString(4,vo.getLinkName());
 	    stmt.setString(5, vo.getLinkPhone());
 	    stmt.setString(6, vo.getLinkAddress());
-	    stmt.setDate(7, vo.getRepairTime());
+	    stmt.setTimestamp(7, vo.getRepairTime());
 	    stmt.setString(8,vo.getType());
 	    stmt.setString(9, vo.getDescription());
 	    stmt.setString(10, vo.getRemark());

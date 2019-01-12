@@ -1,15 +1,16 @@
 package weiyi.dao.vo;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class RepairOrders {
 	private String orderId;
 	private int customId;
-	private Date applyTime;
+	private Timestamp applyTime;
 	private String linkName;
 	private String linkPhone;
 	private String linkAddress;
-	private Date repairTime;
+	private Timestamp repairTime;
 	private String type;//repair type故障的类型
 	private String description;//problem description 故障问题的详细描述
 	private String remark;
@@ -25,10 +26,10 @@ public class RepairOrders {
 	public void setCustomId(int customId) {
 		this.customId = customId;
 	}
-	public Date getApplyTime() {
+	public Timestamp getApplyTime() {
 		return applyTime;
 	}
-	public void setApplyTime(Date applyTime) {
+	public void setApplyTime(Timestamp applyTime) {
 		this.applyTime = applyTime;
 	}
 	public String getLinkName() {
@@ -49,10 +50,10 @@ public class RepairOrders {
 	public void setLinkAddress(String linkAddress) {
 		this.linkAddress = linkAddress;
 	}
-	public Date getRepairTime() {
+	public Timestamp getRepairTime() {
 		return repairTime;
 	}
-	public void setRepairTime(Date repairTime) {
+	public void setRepairTime(Timestamp repairTime) {
 		this.repairTime = repairTime;
 	}
 	public String getType() {

@@ -32,16 +32,20 @@ function checkemail(email){
 
 function checkemail(){
 	var email=document.getElementById("email");
-	alert("开始检查邮箱！");
-	if(email==""){
+	var Expression3=/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
+	var Reg3=new RegExp(Expression3);
+	//alert("开始检查邮箱！");
+	if(email.value==""){
 		alert("请输入您的邮箱（用于找回密码）！");
 		email.focus();
 		return false;
 	}
-	if(!checkemail(email)){
+	if(Reg3.test(email.value) == false){
 		alert("您输入的邮箱格式有误！");
 		email.focus();
 		return false;
+	}else{
+		return true;
 	}
 	return true;
 }

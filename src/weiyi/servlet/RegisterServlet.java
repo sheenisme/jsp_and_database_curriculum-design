@@ -84,7 +84,30 @@ public class RegisterServlet extends HttpServlet {
 		else if(action.equals("AdminRegister")){
 			Admin vo=new Admin();
 			Conversion.convert(vo, request);
-			
+			IDAO<Admin,Integer> dao=DAOFactory.getAdmin();
+			vo.setPassword(new EncryptImp().md5(vo.getPassword()));
+			try {
+				if(dao.doCreate(vo)<= 0){
+					System.out.println("RegiterServlet.java注册管理员账户失败，失败原因：dao.doCreate(vo)<0！");
+					request.getRequestDispatcher("/AdminRegister.jsp").forward(request, response);
+				}else {
+					PrintWriter out=response.getWriter();
+					out.println("<html>");
+					out.println("<head><title>注册管理员成功页面！</title>");
+					out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
+					out.println("<link rel=\"stylesheet\" href=\"./css/form.css\" /></head>");
+					out.println("<body>");
+					out.println("<div class='container'><p class='title'>唯e客户服务系统</p>");
+					out.println("<div class='box'>	<div id='register_box'>");
+					out.println("<h2>注册管理员成功！您的账户名为："+vo.getLoginName()+"!</h2><br>");
+					out.println("<pre><a href='AdminLogin.jsp'>返回登录页面</a></pre></div></div></div>");//
+					out.println("</body></html>");
+					request.getRequestDispatcher("/AdminLogin.jsp").forward(request, response);
+				}
+			} catch (Exception e) {
+				System.out.println("捕获到异常！源于：RegiterServlet.java文件插入数据出现错误！");
+				e.printStackTrace();
+			}
 		}
 		
 		else {

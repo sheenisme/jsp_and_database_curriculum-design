@@ -16,18 +16,18 @@
 				<div id="register_box">
 					<h2>注册管理员页面</h2>
 					<form action="Register" method="post" name="registerform" onsubmit="return checkregister()">
-						<input type="hidden" name="action" value="CustomRegister">
+						<input type="hidden" name="action" value="AdminRegister">
 						<div class="ui register">
-						账&nbsp;&nbsp;&nbsp;&nbsp;号:&nbsp;<input type="text" name="loginName"><br>
+						账&nbsp;&nbsp;&nbsp;&nbsp;号:&nbsp;<input id="name" type="text" name="loginName"><br>
 						</div>
 						<div class="ui register">
-						密&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;<input type="password" name="password"><br>
+						密&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;<input id="password" type="password" name="password"><br>
 						</div>
 						<div class="ui register">
 						确&nbsp;&nbsp;&nbsp;&nbsp;认:&nbsp;<input id="repck" type="password" name="repck"><br>
 						</div>
 						<div class="ui register">	
-						姓&nbsp;&nbsp;&nbsp;&nbsp;名:&nbsp;<input id="name" type="text" name="name"><br>
+						姓&nbsp;&nbsp;&nbsp;&nbsp;名:&nbsp;<input id="name2" type="text" name="name"><br>
 						</div>
 						<div class="ui register">	
 						性&nbsp;&nbsp;&nbsp;&nbsp;别:&nbsp;<input id="sex" type="text" name="sex"><br>
@@ -41,14 +41,9 @@
 						<div class="ui register">
 						地&nbsp;&nbsp;&nbsp;&nbsp;址:&nbsp;<input id="address" type="text" name="address"><br>
 						</div>
-						<div class="ui date">
-						出生日期:&nbsp;<input class="Wdate" type="text" name="birthday" onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})" value="">	
-						</div>
-						<input type="hidden" name="date" value=<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>>	
-						<input type="hidden" name="point" value="10">
-						<div class="ui register">	
-						单&nbsp;&nbsp;&nbsp;&nbsp;位:&nbsp;<input id="unit" type="text" name="unit"><br>
-						</div>
+						<input type="hidden" name="date" value="<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>">	
+						<input type="hidden" name="grade" value="10">
+						<input type="hidden" name="upperId" value="8">
 						<div class="ui register">	
 						备&nbsp;&nbsp;&nbsp;&nbsp;注:&nbsp;<input id="remark" type="text" name="remark"><br>
 						</div>
@@ -58,7 +53,7 @@
 					</form>	
 				</div>
 				<br>
-				<div><pre>唯 e 客户服务系统 - 注册账户页面！</pre></div> 
+				<div><pre>唯 e 客户服务系统 - 注册管理员页面！</pre></div> 
 		</div>
 	</div>
 	<br><br>

@@ -1,6 +1,7 @@
 package weiyi.dao.vo;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Custom {
 	private int id;
@@ -12,7 +13,7 @@ public class Custom {
 	private String phone;
 	private String address;
 	private Date birthday;
-	private Date date;
+	private Timestamp date;
 	private String point;//accumulate Point会员积分数
 	private String unit;
 	private String remark;
@@ -64,10 +65,10 @@ public class Custom {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
 	public String getPoint() {
