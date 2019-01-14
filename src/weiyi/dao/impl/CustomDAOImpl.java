@@ -119,7 +119,7 @@ public class CustomDAOImpl implements ICustomDAO{
 
 	@Override
 	public int doUpdate(Custom vo) throws Exception {
-		String sql = "update custom set loginname=?,password=?,name=?，email=?,phone=?,address=?,birthday=?,date=?,point=?,unit=?,remark=? where id=?";  
+		String sql = "update custom set loginname=?,password=?,name=?,sex=?,email=?,phone=?,address=?,birthday=?,date=?,point=?,unit=?,remark=? where id=?";  
         stat = con.prepareStatement(sql);     
         stat.setString(1, vo.getLoginName());  
         stat.setString(2, vo.getPassword());  
@@ -133,6 +133,7 @@ public class CustomDAOImpl implements ICustomDAO{
         stat.setString(10, vo.getPoint());
         stat.setString(11, vo.getUnit());
         stat.setString(12, vo.getRemark());
+        stat.setInt(13, vo.getId());
         int update=stat.executeUpdate();
         if(update>0) {
         	return update;

@@ -81,14 +81,14 @@ body{
 	<div id="left" class="container">
 		<ul id="navigation">
 			<li><a href="CreateRepairOreders.jsp" target="rightFrame">&nbsp;&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;&nbsp;</a></li>
-			<li><a href="">评价此次维修</a></li>
-			<li><a href="" >查看我的维修</a></li>
-			<li><a href="" >查看我的评价</a></li>
+			<li><a href="CreateEvaluationRecord.jsp" target="rightFrame">评价此次维修</a></li>
+			<li><a href="" target="rightFrame">查看我的维修</a></li>
+			<li><a href="" target="rightFrame">查看我的评价</a></li>
 			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">查看所有维修</a></li>
-			<li><a href="#">查看所有评价</a></Li>
-			<li><a href="">查看统计信息</a></li>
-			<li><a href="">查询配件信息</a></li>
-			<li><a href="">修改个人信息</a></li>
+			<li><a href="ShowAllEvaluationRecord.jsp" target="rightFrame">查看所有评价</a></Li>
+			<li><a href="" target="rightFrame">查看统计信息</a></li>
+			<li><a href="ShowAllPcParts.jsp" target="rightFrame">查看配件信息</a></li>
+			<li><a href="ReviseUser.jsp" target="rightFrame">修改个人信息</a></li>
 		</ul>
 	</div>
 	<div id="right" class="container">

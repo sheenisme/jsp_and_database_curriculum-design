@@ -80,17 +80,18 @@ body{
 <div id="main">
 	<div id="left" class="container">
 		<ul id="navigation">
-			<li><a href="CreateRepairOreders.jsp" target="rightFrame">维&nbsp;修&nbsp;回&nbsp;执&nbsp;单</a></li>
-			<li><a href="" >录入配件信息</a></li>
-			<li><a href="" >维护回执信息</a></li>
-			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">维护维修信息</a></li>
-			<li><a href="#">维护评价信息</a></Li>
-			<li><a href="">维护配件信息</a></li>
-			<li><a href="" >查看所有客户</a></li>
-			<li><a href="">查看统计信息</a></li>
-			<li><a href="">查看反馈信息</a></li>
-			<li><a href="">修改配件信息</a></li>
-			<li><a href="">修改个人信息</a></li>
+			<!-- CreateRepairReceipt.jsp -->
+			<li><a href="" target="rightFrame">维&nbsp;修&nbsp;回&nbsp;执&nbsp;单</a></li>
+			<li><a href="" target="rightFrame">录入配件信息</a></li>
+			<li><a href="" target="rightFrame">查看回执信息</a></li>
+			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">查看维修信息</a></li>
+			<li><a href="ShowAllEvaluationRecord.jsp" target="rightFrame">查看评价信息</a></Li>
+			<li><a href="" target="rightFrame">查看反馈信息</a></li>
+			<li><a href="ShowAllPcParts.jsp" target="rightFrame">查看配件信息</a></li>
+			<li><a href="" target="rightFrame">查看所有客户</a></li>
+			<li><a href="" target="rightFrame">查看统计信息</a></li>
+			<li><a href="" target="rightFrame">修改配件信息</a></li>
+			<li><a href="ReviseAdmin.jsp" target="rightFrame">修改个人信息</a></li>
 			<li><a href="AdminRegister.jsp" target="rightFrame">申请下级管理员</a></li>
 		</ul>
 	</div>

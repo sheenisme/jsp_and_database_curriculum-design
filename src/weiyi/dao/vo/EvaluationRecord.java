@@ -6,7 +6,6 @@ public class EvaluationRecord {
 	private int evaluateId;
 	private String orderId;
 	private int userId;
-	private int adminId;
 	private Timestamp evaluateDate;
 	private int starLevel;
 	private String Context;
@@ -53,11 +52,5 @@ public class EvaluationRecord {
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-	public int getAdminId() {
-		return adminId;
-	}
-	public void setAdminId(int adminId) {
-		this.adminId = adminId;
 	}
 }

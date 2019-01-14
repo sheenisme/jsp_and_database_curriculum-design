@@ -19,15 +19,14 @@ public class EvaluationRecordDAOImpl implements IEvaluationRecordDAO {
 	
 	@Override
 	public int doCreate(EvaluationRecord vo) throws Exception {
-		String sql = "{call EvaluationRecordInsert(?,?,?,?,?,?,?)}"; 
+		String sql = "{call EvaluationRecordInsert(?,?,?,?,?,?)}"; 
 	    stmt = con.prepareCall(sql);
 	    stmt.setString(1, vo.getOrderId());
 	    stmt.setInt(2,vo.getUserId());
-	    stmt.setInt(3,vo.getAdminId());
-	    stmt.setTimestamp(4, vo.getEvaluateDate());
-	    stmt.setInt(5,vo.getStarLevel());
-	    stmt.setString(6, vo.getContext());
-	    stmt.setString(7, vo.getRemark());
+	    stmt.setTimestamp(3, vo.getEvaluateDate());
+	    stmt.setInt(4,vo.getStarLevel());
+	    stmt.setString(5, vo.getContext());
+	    stmt.setString(6, vo.getRemark());
 	   
 	    int result=stmt.executeUpdate();
 	    if(result > 0) {
@@ -50,11 +49,10 @@ public class EvaluationRecordDAOImpl implements IEvaluationRecordDAO {
 	       	vo.setEvaluateId(rs.getInt(1));
 	       	vo.setOrderId(rs.getString(2));
 	       	vo.setUserId(rs.getInt(3));
-	       	vo.setAdminId(rs.getInt(4));
-	       	vo.setEvaluateDate(rs.getTimestamp(5));
-	       	vo.setStarLevel(rs.getInt(6));
-	       	vo.setContext(rs.getString(7));
-	       	vo.setRemark(rs.getString(8));
+	       	vo.setEvaluateDate(rs.getTimestamp(4));
+	       	vo.setStarLevel(rs.getInt(5));
+	       	vo.setContext(rs.getString(6));
+	       	vo.setRemark(rs.getString(7));
 	       	list.add(vo);
 	       	//System.out.println(vo.getOrderId());
 	    }    
@@ -73,11 +71,10 @@ public class EvaluationRecordDAOImpl implements IEvaluationRecordDAO {
 	       	vo.setEvaluateId(rs.getInt(1));
 	       	vo.setOrderId(rs.getString(2));
 	       	vo.setUserId(rs.getInt(3));
-	       	vo.setAdminId(rs.getInt(4));
-	       	vo.setEvaluateDate(rs.getTimestamp(5));
-	       	vo.setStarLevel(rs.getInt(6));
-	       	vo.setContext(rs.getString(7));
-	       	vo.setRemark(rs.getString(8));
+	       	vo.setEvaluateDate(rs.getTimestamp(4));
+	       	vo.setStarLevel(rs.getInt(5));
+	       	vo.setContext(rs.getString(6));
+	       	vo.setRemark(rs.getString(7));
 	    }    
 		return vo;
 	}
@@ -97,16 +94,15 @@ public class EvaluationRecordDAOImpl implements IEvaluationRecordDAO {
 
 	@Override
 	public int doUpdate(EvaluationRecord vo) throws Exception {
-		String sql = "{call EvaluationRecordUpdate(?,?,?,?,?,?,?,?)}"; 
+		String sql = "{call EvaluationRecordUpdate(?,?,?,?,?,?,?)}"; 
 		stmt = con.prepareCall(sql);
 		stmt.setInt(1, vo.getEvaluateId());
 	    stmt.setString(2, vo.getOrderId());
 	    stmt.setInt(3,vo.getUserId());
-	    stmt.setInt(4,vo.getAdminId());
-	    stmt.setTimestamp(5, vo.getEvaluateDate());
-	    stmt.setInt(6,vo.getStarLevel());
-	    stmt.setString(7, vo.getContext());
-	    stmt.setString(8, vo.getRemark());
+	    stmt.setTimestamp(4, vo.getEvaluateDate());
+	    stmt.setInt(5,vo.getStarLevel());
+	    stmt.setString(6, vo.getContext());
+	    stmt.setString(7, vo.getRemark());
 	    
 	    int result=stmt.executeUpdate();
 	    if(result > 0) {

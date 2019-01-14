@@ -117,7 +117,7 @@ public class AdminDAOImpl implements IAdminDAO {
 
 	@Override
 	public int doUpdate(Admin vo) throws Exception {
-    	String sql = "update admin set loginname=?,password=?,name=?，sex=?,email=?,phone=?,address=?,date=?,grade=?,uppid=?,remark=? where id=?";  
+    	String sql = "update admin set loginname=?,password=?,name=?,sex=?,email=?,phone=?,address=?,date=?,grade=?,upperid=?,remark=? where id=?";  
         stat = con.prepareStatement(sql);    
         stat.setString(1, vo.getLoginName());  
         stat.setString(2, vo.getPassword());  
