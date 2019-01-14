@@ -10,7 +10,7 @@
 <body>
 	<%@ page import="java.sql.*,java.util.*,weiyi.dao.*,weiyi.dao.vo.*,weiyi.dao.factory.*" %>
 	<div class="container">
-	<table class="table table-condensed" align="center">
+	<table id="table" class="table table-condensed" align="center">
 	<thead>
 	<tr class="active">
 		<td>  序 号   </td>

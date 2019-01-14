@@ -8,5 +8,5 @@ import weiyi.dao.vo.EvaluationRecord;
  *
  */
 public interface IEvaluationRecordDAO extends IDAO<EvaluationRecord, Integer> {
-
+	
 }

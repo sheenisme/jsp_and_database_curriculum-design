@@ -18,10 +18,10 @@ body{
 			
      }
 #left{
-			margin:6% 0px 2% 1%;
+			margin:6% 0px 4% 1%;
 			background:#fff;
-			width:15%;
-			height:60%;
+			width:220px;
+			height:57%;
 			float:left;
 	  }
 #right{
@@ -54,20 +54,23 @@ body{
 	font-size: 15px;
 	float:right;
 }
+.container{
+	width:100%;
+}
 </style>
 </head>
 <body>
 <div id="header">
 	<div class="container">	
-		<ul class="nav nav-tabs nav-justified" role="tablist">
-			<li role="presentation" class="active"><a href="">主页</a></li>
-			<li role="presentation"><a href="http://www.sheensong.top/wordpress">论坛</a></li>
-			<li role="presentation"><a href="">反馈</a></li>
+		<ul class="nav nav-tabs nav-justified" >
+			<li class="active"><a href="">主页</a></li>
+			<li ><a href="http://www.sheensong.top/wordpress">论坛</a></li>
+			<li ><a href="">反馈</a></li>
 			<%
 				String name=(String)request.getSession().getAttribute("CustomSession"); 
 			%> 
-			<li class="disabled" role="presentation"><a><%=name %>用户</a></li>
-			<li role="presentation"><a href="UserLogin.jsp">退出登录</a></li>		
+			<li class="disabled" ><a><%=name %>用户</a></li>
+			<li ><a href="UserLogin.jsp">退出登录</a></li>		
 		</ul>
 		<script src="./js/bootstrap.min.js"></script>
 	</div>
@@ -77,17 +80,19 @@ body{
 <div id="main">
 	<div id="left" class="container">
 		<ul id="navigation">
-			<li><a href="CreateRepairOreders.jsp" target="rightFrame">&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;</a></li>
-			<li><a href="" >查看维修记录</a></li>
+			<li><a href="CreateRepairOreders.jsp" target="rightFrame">&nbsp;&nbsp;我&nbsp;要&nbsp;报&nbsp;修&nbsp;&nbsp;</a></li>
 			<li><a href="">评价此次维修</a></li>
-			<li><a href="ShowRepairOrders.jsp" target="rightFrame">查看所有记录</a></li>
-			<li><a href="#">导航3</a></Li>
-			<li><a href="">导航</a></li>
-			<li><a href="">导航4</a></li>
+			<li><a href="" >查看我的维修</a></li>
+			<li><a href="" >查看我的评价</a></li>
+			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">查看所有维修</a></li>
+			<li><a href="#">查看所有评价</a></Li>
+			<li><a href="">查看统计信息</a></li>
+			<li><a href="">查询配件信息</a></li>
+			<li><a href="">修改个人信息</a></li>
 		</ul>
 	</div>
 	<div id="right" class="container">
-		<iframe width="92%"  height="100%"  name="rightFrame"></iframe>
+		<iframe width="100%" height="100%" name="rightFrame"></iframe>
 	</div>
 </div>
 

@@ -1,6 +1,5 @@
 package weiyi.dao.vo;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class RepairOrders {

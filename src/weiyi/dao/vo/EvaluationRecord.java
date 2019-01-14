@@ -1,50 +1,27 @@
 package weiyi.dao.vo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class EvaluationRecord {
-	private int evaluateID;
-	private String orderID;
-	private int userID;
-	private int adminID;
-	private Date evaluateDate;
+	private int evaluateId;
+	private String orderId;
+	private int userId;
+	private int adminId;
+	private Timestamp evaluateDate;
 	private int starLevel;
 	private String Context;
 	private String remark;
-	public int getEvaluateID() {
-		return evaluateID;
-	}
-	public void setEvaluateID(int evaluateID) {
-		this.evaluateID = evaluateID;
-	}
-	public String getOrderID() {
-		return orderID;
-	}
-	public void setOrderID(String orderID) {
-		this.orderID = orderID;
-	}
-	public int getUserID() {
-		return userID;
-	}
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
-	public int getAdminID() {
-		return adminID;
-	}
-	public void setAdminID(int adminID) {
-		this.adminID = adminID;
-	}
+	
 	public int getStarLevel() {
 		return starLevel;
 	}
 	public void setStarLevel(int starLevel) {
 		this.starLevel = starLevel;
 	}
-	public Date getEvaluateDate() {
+	public Timestamp getEvaluateDate() {
 		return evaluateDate;
 	}
-	public void setEvaluateDate(Date evaluateDate) {
+	public void setEvaluateDate(Timestamp evaluateDate) {
 		this.evaluateDate = evaluateDate;
 	}
 	public String getContext() {
@@ -58,5 +35,29 @@ public class EvaluationRecord {
 	}
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+	public int getEvaluateId() {
+		return evaluateId;
+	}
+	public void setEvaluateId(int evaluateId) {
+		this.evaluateId = evaluateId;
+	}
+	public String getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public int getAdminId() {
+		return adminId;
+	}
+	public void setAdminId(int adminId) {
+		this.adminId = adminId;
 	}
 }

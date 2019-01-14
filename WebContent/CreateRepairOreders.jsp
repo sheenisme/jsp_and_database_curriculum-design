@@ -26,9 +26,8 @@ if(cookies!=null){
 }
 %>
 	<div class="container">
-		<form role="form-horizontal" action="CustomServlet" method="post">
+		<form  action="CustomServlet" method="post">
 			<div class="form-group">
-				<!-- 这里的id是客户的ID，即CustomId,因为单号的ID，是后台数据库生成的 -->
 				<input type="hidden" name="action" value="CreateRepairOrders"> 
 				<input type="hidden" name="customId" value=<%=loginId %>>
 				<label style="font-size: 18px;font-weight: 50;text-align: center;">编号是：<%=loginId %>&nbsp;&nbsp;的客户，您好！</label>

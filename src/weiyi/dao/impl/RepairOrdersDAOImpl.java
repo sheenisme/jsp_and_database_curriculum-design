@@ -92,7 +92,7 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 
 	@Override
 	public int doUpdate(RepairOrders vo) throws Exception {
-		String sql = "{call RepairOrdersUpdate(?,?,?,?,?,?,?,?,?,?)}"; 
+		String sql = "{call RepairOrdersUpdate(?,?,?,?,?,?,?,?,?,?,?)}"; 
 	    stmt = con.prepareCall(sql);
 	    stmt.setString(1, vo.getOrderId());
 	    stmt.setInt(2, vo.getCustomId());

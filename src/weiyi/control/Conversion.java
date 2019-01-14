@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 批量从request请求中获取参数值，并赋值给对象
  * 说明：在servlet中常需要从request中获取参数，同时需要赋值给某个实例对象，当参数较少时可以使用getParameter(String name);从request中获取，但是当数据较多时，代码冗余复杂，没有技术含量，所以利用反射写了一个批量对参数获取并赋值的方法（暂时只支持对String，Integer,int，Float,float,Double,double,java.sql.Date,java.util.Date类型的数据或者数组进行赋值）
- * @author dingshuangen
+ * @author 
  * https://blog.csdn.net/dingse/article/details/79122424
  *
  */
@@ -93,7 +93,7 @@ public class Conversion {
 					}
  
 				}
-				//
+				//如果不是数组类型
 				else {
 					String str = request.getParameter(name);
 					if (str != null) {
@@ -134,8 +134,12 @@ public class Conversion {
 							}
 						}
 					}
-					else
-					{
+					//如果是未识别的是ID，这可能为自增的主键
+					else if(name.equals("id") || name.equals("Id") || name.equals("ID")){
+						;
+					}
+					//如果都不是以上类型，进行提示
+					else{
 						System.out.println(name+"的属性值是："+str+" ！未能成功存入"+vo+"对象中！");
 					}
 				}
