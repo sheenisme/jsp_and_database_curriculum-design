@@ -54,4 +54,11 @@ public class RepairReceiptDAOProxy implements IRepairReceiptDAO {
     	return result;
 	}
 
+	@Override
+	public List<String> findOrderId(Integer id) throws Exception {
+		List<String> list=dao.findOrderId(id);
+		dbc.close();
+		return list;
+	}
+
 }

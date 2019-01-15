@@ -29,18 +29,26 @@ if(cookies!=null){
 		<form  action="CustomServlet" method="post">
 			<div class="form-group">
 				<input type="hidden" name="action" value="CreateEvaluationRecord"> 
+				<br>
+				<label style="font-size: 18px;font-weight: 50;text-align: center;">请选择您的维修单号</label>
+				<select name="orderId">
+				<%
+				IRepairReceiptDAO dao=DAOFactory.getRepairReceipt();
+				List<String> list = dao.findOrderId(id);
+				for(int i=0;i<list.size();i++){
+					String vo=list.get(i);
+				%>
+					<option value="<%=vo.toString() %>"><%=vo.toString() %></option>
+				<%
+				}
+				%>
+				</select>
+				<br>
 				<input type="hidden" name="userId" value=<%=userId %>>
 				<label style="font-size: 18px;font-weight: 50;text-align: center;">编号是：<%=userId %>&nbsp;&nbsp;的客户，您好！</label>
 				<br>
-				<input type="hidden" name="evaluateDate" value="<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,23) %>">
-				<br>
+				<input type="hidden" name="evaluateDate" value="<%=new java.sql.Timestamp(System.currentTimeMillis()).toString().substring(0,19) %>">
 				
-				<label style="font-size: 18px;font-weight: 50;text-align: center;">请选择您的维修单号</label>
-				<select name="orderId">
-					<option>256161</option>
-				</select>
-				
-				<br>
 				<label style="font-size: 18px;font-weight: 50;text-align: center;">服务的星级</label>
 				<input class="form-control" type="text" style="width:50%" name="starLevel">
 				<label style="font-size: 18px;font-weight: 50;text-align: center;">服务详细描述：</label>

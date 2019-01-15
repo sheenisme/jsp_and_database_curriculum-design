@@ -24,7 +24,7 @@ public class RepairReceiptDAOImpl implements IRepairReceiptDAO {
 	    stmt.setString(1, vo.getOrderId());
 	    stmt.setInt(2,vo.getAdminId());
 	    stmt.setTimestamp(3,vo.getRepairTime());
-	    stmt.setBoolean(4, vo.isNeedParts());
+	    stmt.setBoolean(4, vo.getNeedParts());
 	    stmt.setString(5,vo.getPartsType());
 	    stmt.setString(6, vo.getResolvent());
 	    stmt.setString(7, vo.getAdvise());
@@ -106,7 +106,7 @@ public class RepairReceiptDAOImpl implements IRepairReceiptDAO {
 		stmt.setString(2, vo.getOrderId());
 	    stmt.setInt(3,vo.getAdminId());
 	    stmt.setTimestamp(4,vo.getRepairTime());
-	    stmt.setBoolean(5, vo.isNeedParts());
+	    stmt.setBoolean(5, vo.getNeedParts());
 	    stmt.setString(6,vo.getPartsType());
 	    stmt.setString(7, vo.getResolvent());
 	    stmt.setString(8, vo.getAdvise());
@@ -118,6 +118,22 @@ public class RepairReceiptDAOImpl implements IRepairReceiptDAO {
 	    else {
 		   return -1;
 	    }
+	}
+
+	@Override
+	public List<String> findOrderId(Integer id) throws Exception {
+		String sql = "{call OrdersIdByReceipt(?)}"; 
+	    stmt = con.prepareCall(sql);
+	    stmt.setInt(1, id);
+	    ResultSet rs = stmt.executeQuery();
+	    List<String> list=new ArrayList<String>();
+	    String vo=null;
+	    while(rs.next()){   
+	       	vo=new String();  
+	       	vo=rs.getString(1);
+	       	list.add(vo);
+	    }    
+		return list;
 	}
 
 }

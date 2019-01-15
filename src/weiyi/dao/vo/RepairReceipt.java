@@ -7,17 +7,17 @@ public class RepairReceipt {
 	private String orderId;;
 	private int adminId;
 	private Timestamp repairTime;
-	private boolean isNeedParts;
+	private boolean needParts;
 	private String partsType;
 	private String resolvent;
 	private String advise;
 	private String remark;
 	
-	public boolean isNeedParts() {
-		return isNeedParts;
+	public boolean getNeedParts() {
+		return needParts;
 	}
-	public void setNeedParts(boolean isNeedParts) {
-		this.isNeedParts = isNeedParts;
+	public void setNeedParts(boolean needParts) {
+		this.needParts = needParts;
 	}
 	public String getPartsType() {
 		return partsType;

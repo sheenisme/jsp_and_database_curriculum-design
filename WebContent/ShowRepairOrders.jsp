@@ -5,17 +5,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/bootstrap.min.css" />
-<title>显示客户所有的维修记录</title>
+<title>仅查看我的的维修记录</title>
 </head>
 <body>
 	<%@ page import="java.sql.*,java.util.*,weiyi.dao.*,weiyi.dao.vo.*,weiyi.dao.factory.*" %>
 	<div class="container">
-	<table class="table table-condensed" align="center">
+	<table id="table" class="table table-condensed" align="center">
 	<thead>
 	<tr class="active">
 		<td>  序 号   </td>
 		<td>维修单号  </td>
-		<td>客户ID  </td>
+		<td>我的ID  </td>
 		<td>报修时间  </td>
 		<td>联 系 人   </td>
 		<td>联系电话  </td>
@@ -27,13 +27,18 @@
 	</tr>
 	</thead>
 <%
-request.setCharacterEncoding("utf-8");
-response.setCharacterEncoding("utf-8");
-IDAO<RepairOrders,String> dao=DAOFactory.getRepairOrders();
-List<RepairOrders> list = dao.findAll();
-for(int i=0;i<list.size();i++){
-	request.setAttribute("number",i);
-	RepairOrders vo=list.get(i);
+	request.setCharacterEncoding("utf-8");
+	response.setCharacterEncoding("utf-8");
+	IRepairOrdersDAO dao=DAOFactory.getRepairOrders();
+	List<RepairOrders> list = dao.findAll();
+	RepairOrders vo=null;
+	for(int i=0;i<list.size();i++){
+		request.setAttribute("number",i);
+		vo=list.get(i);
+		List<String> listOrderId = dao.findOrderId(vo.getCustomId());
+		for(int j=0;j<listOrderId.size();j++){
+			String OrderIdVo=listOrderId.get(j);
+			if(OrderIdVo.equals(vo.getOrderId())){
 %>
 	<tbody>
 	<tr class="active">
@@ -51,7 +56,9 @@ for(int i=0;i<list.size();i++){
 	</tr>
 	</tbody>
 <% 
-}
+			}
+		}
+	}
 %>
 	</table>
 	</div>

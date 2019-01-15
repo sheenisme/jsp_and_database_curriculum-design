@@ -54,4 +54,11 @@ public class PcPartsDAOProxy implements IPcPartsDAO {
     	return result;
 	}
 
+	@Override
+	public List<PcParts> findByName(String name) throws Exception {
+		List<PcParts>list = dao.findByName(name);  
+        dbc.close();  
+        return list; 
+	}
+
 }

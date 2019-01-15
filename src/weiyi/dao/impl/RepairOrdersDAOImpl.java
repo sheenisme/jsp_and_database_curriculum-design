@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import weiyi.dao.IRepairOrdersDAO;
+import weiyi.dao.dbc.DatabaseConnection;
 import weiyi.dao.vo.RepairOrders;
 
 public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
@@ -124,6 +125,40 @@ public class RepairOrdersDAOImpl implements IRepairOrdersDAO {
 	    }else {
 	    	return -1;
 	    }
+	}
+
+	@Override
+	public List<String> findOrderId(Integer id) throws Exception {
+		if(!con.isClosed()) {
+			String sql = "{call OrdersId(?)}"; 
+			stmt = con.prepareCall(sql);
+	    	stmt.setInt(1, id);
+	    	ResultSet rs = stmt.executeQuery();
+	    	List<String> list=new ArrayList<String>();
+	    	String vo=null;
+	    	while(rs.next()){   
+	    		vo=new String();  
+	    		vo=rs.getString(1);
+	    		list.add(vo);
+	    	}    
+	    	return list;
+		}
+		else {
+			this.con= new DatabaseConnection().getConnection();
+			String sql = "{call OrdersId(?)}"; 
+			stmt = con.prepareCall(sql);
+	    	stmt.setInt(1, id);
+	    	ResultSet rs = stmt.executeQuery();
+	    	List<String> list=new ArrayList<String>();
+	    	String vo=null;
+	    	while(rs.next()){   
+	    		vo=new String();  
+	    		vo=rs.getString(1);
+	    		list.add(vo);
+	    	}    
+	    	return list;
+		}
+			
 	}
 
 }

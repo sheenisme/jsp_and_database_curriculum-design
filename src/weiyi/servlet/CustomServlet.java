@@ -92,11 +92,11 @@ public class CustomServlet extends HttpServlet {
 				out.println("<body>");
 				out.println("<div class='container'><p class='title'>唯e客户服务系统</p>");
 				out.println("<div class='box'>	<div id='register_box'>");
-				out.println("<h2>评价成功，您这次评价内容的编号为："+vo.getEvaluateId()+"!</h2><br><br><h2>感谢您对我们的服务做出的评价！</h2><br>");
+				out.println("<h2>评价成功！"+"!</h2><br><br><h2>感谢您对我们的服务做出的评价！</h2><br>");
 				out.println("<pre><a href='#'>唯e数码，您身边的电脑专家</a></pre></div></div></div>");//
 				out.println("</body></html>");
 			} catch (Exception e) {
-				System.out.println("CustomService.java文件插入数据出现错误！");
+				System.out.println("CustomServlet.java文件插入数据出现错误！");
 				e.printStackTrace();
 			}
 		}

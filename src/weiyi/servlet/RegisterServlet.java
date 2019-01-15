@@ -102,7 +102,7 @@ public class RegisterServlet extends HttpServlet {
 					out.println("<h2>注册管理员成功！您的账户名为："+vo.getLoginName()+"!</h2><br>");
 					out.println("<pre><a href='AdminLogin.jsp' target='_top'>返回登录页面</a></pre></div></div></div>");//
 					out.println("</body></html>");
-					//request.getRequestDispatcher("/AdminLogin.jsp").forward(request, response);
+					request.getRequestDispatcher("/AdminLogin.jsp").forward(request, response);
 				}
 			} catch (Exception e) {
 				System.out.println("捕获到异常！源于：RegiterServlet.java文件插入数据出现错误！");

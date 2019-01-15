@@ -65,7 +65,7 @@ body{
 		<ul class="nav nav-tabs nav-justified" >
 			<li class="active"><a href="">我的主页</a></li>
 			<li ><a href="http://www.sheensong.top/wordpress">论坛</a></li>
-			<li ><a href="">反馈</a></li>
+			<li ><a href="Feedback.jsp">反馈</a></li>
 			<%
 				String name=(String)request.getSession().getAttribute("AdminSession"); 
 			%> 
@@ -81,16 +81,16 @@ body{
 	<div id="left" class="container">
 		<ul id="navigation">
 			<!-- CreateRepairReceipt.jsp -->
-			<li><a href="" target="rightFrame">维&nbsp;修&nbsp;回&nbsp;执&nbsp;单</a></li>
-			<li><a href="" target="rightFrame">录入配件信息</a></li>
-			<li><a href="" target="rightFrame">查看回执信息</a></li>
+			<li><a href="CreateRepairReceipt.jsp" target="rightFrame">维&nbsp;修&nbsp;回&nbsp;执&nbsp;单</a></li>
+			<li><a href="CreatePcParts.jsp" target="rightFrame">录入配件信息</a></li>
+			<li><a href="ShowAllRepairReceipt.jsp" target="rightFrame">查看回执信息</a></li>
 			<li><a href="ShowAllRepairOrders.jsp" target="rightFrame">查看维修信息</a></li>
 			<li><a href="ShowAllEvaluationRecord.jsp" target="rightFrame">查看评价信息</a></Li>
-			<li><a href="" target="rightFrame">查看反馈信息</a></li>
+			<li><a href="ShowAllFeedback.jsp" target="rightFrame">查看反馈信息</a></li>
 			<li><a href="ShowAllPcParts.jsp" target="rightFrame">查看配件信息</a></li>
-			<li><a href="" target="rightFrame">查看所有客户</a></li>
+			<li><a href="ShowAllUser.jsp" target="rightFrame">查看所有客户</a></li>
 			<li><a href="" target="rightFrame">查看统计信息</a></li>
-			<li><a href="" target="rightFrame">修改配件信息</a></li>
+			<li><a href="RevisePcParts.jsp" target="rightFrame">修改配件信息</a></li>
 			<li><a href="ReviseAdmin.jsp" target="rightFrame">修改个人信息</a></li>
 			<li><a href="AdminRegister.jsp" target="rightFrame">申请下级管理员</a></li>
 		</ul>

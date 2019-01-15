@@ -2,6 +2,7 @@ package weiyi.dao.impl;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -119,6 +120,23 @@ public class PcPartsDAOImp implements IPcPartsDAO {
 	    else {
 		   return -1;
 	    }
+	}
+
+	@Override
+	public List<PcParts> findByName(String name) throws Exception {
+		PreparedStatement stat = null;
+		List<PcParts> list = new ArrayList<PcParts>();
+		String sql = "select id from pcparts where name=? ";  
+        stat = con.prepareStatement(sql);  
+        stat.setString(1,name);  
+        ResultSet rs = stat.executeQuery(); 
+        PcParts vo=null;
+        while(rs.next()){      	
+        	vo=new PcParts();
+        	vo=this.findById(rs.getInt(1));
+           	list.add(vo);
+        }
+        return list;
 	}
 
 }

@@ -12,20 +12,20 @@
 <body>
 <%@ page import="java.sql.*,java.util.*,weiyi.dao.*,weiyi.dao.vo.*,weiyi.dao.factory.*" %>
 <%
-request.setCharacterEncoding("utf-8");
-response.setCharacterEncoding("utf-8");
-Cookie cookies[]=request.getCookies();
-IDAO<Admin,Integer> dao=DAOFactory.getAdmin();
-Admin vo=null;
-int id;
-if(cookies!=null){
-	for(int i=0;i<cookies.length;i++){
-		if(cookies[i].getName().equals("AdminCookie")){
-			id=Integer.parseInt(cookies[i].getValue().split("#")[2]);
-			vo=dao.findById(id);
+	request.setCharacterEncoding("utf-8");
+	response.setCharacterEncoding("utf-8");
+	Cookie cookies[]=request.getCookies();
+	IDAO<Admin,Integer> dao=DAOFactory.getAdmin();
+	Admin vo=null;
+	int id;
+	if(cookies!=null){
+		for(int i=0;i<cookies.length;i++){
+			if(cookies[i].getName().equals("AdminCookie")){
+				id=Integer.parseInt(cookies[i].getValue().split("#")[2]);
+				vo=dao.findById(id);
+			}
 		}
 	}
-}
 %>
 	<div class="container">
 		<p class="title">唯 e 客户服务系统</p>
